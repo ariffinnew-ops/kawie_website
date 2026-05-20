@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image"
 import StatusBadge from "@/components/status-badge"
 import CountdownTimer from "@/components/countdown-timer"

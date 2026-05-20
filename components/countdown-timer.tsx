@@ -9,8 +9,8 @@ interface TimeLeft {
   seconds: number
 }
 
-// Target: 90 days from a fixed reference date
-const LAUNCH_DATE = new Date("2025-08-18T00:00:00")
+// Target: ~90 days from today (May 2026)
+const LAUNCH_DATE = new Date("2026-08-18T00:00:00")
 
 function getTimeLeft(): TimeLeft {
   const now = new Date()
