@@ -4,9 +4,13 @@ import Image from "next/image"
 import StatusBadge from "@/components/status-badge"
 import CountdownTimer from "@/components/countdown-timer"
 
-export default function HeroSection() {
+type HeroSectionProps = {
+  adminTrigger?: React.ReactNode
+}
+
+export default function HeroSection({ adminTrigger }: HeroSectionProps) {
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center gap-2 sm:gap-2.5 px-4 py-2 text-center w-full max-w-3xl mx-auto">
+    <section className="relative z-10 flex min-h-0 w-full max-w-3xl shrink flex-col items-center justify-center gap-1 px-3 py-1 text-center sm:gap-1.5">
 
       {/* Logo */}
       <div className="relative shrink-0">
@@ -18,9 +22,9 @@ export default function HeroSection() {
         <Image
           src="/kawie-logo.jpg"
           alt="Kawie Digital Solution logo — neon K on circuit board"
-          width={200}
-          height={200}
-          className="relative rounded-2xl w-[min(42vw,200px)] h-[min(42vw,200px)] object-cover"
+          width={150}
+          height={150}
+          className="relative h-[min(28vw,150px)] w-[min(28vw,150px)] rounded-2xl object-cover"
           priority
         />
       </div>
@@ -30,7 +34,7 @@ export default function HeroSection() {
 
       {/* Company name */}
       <h1
-        className="text-[clamp(1.125rem,4.2vw,2.25rem)] font-semibold tracking-[0.08em] uppercase text-foreground leading-tight whitespace-nowrap max-w-[95vw]"
+        className="max-w-[95vw] text-[clamp(1rem,3.5vw,1.75rem)] font-semibold uppercase leading-tight tracking-[0.08em] text-foreground whitespace-nowrap"
         style={{ fontFamily: "var(--font-barlow), sans-serif" }}
       >
         Kawie{" "}
@@ -47,36 +51,36 @@ export default function HeroSection() {
       </h1>
 
       {/* Divider */}
-      <div className="flex items-center gap-3 w-full max-w-xs" aria-hidden="true">
-        <div className="flex-1 h-px" style={{ background: "var(--border-bright)" }} />
+      <div className="flex w-full max-w-xs items-center gap-2" aria-hidden="true">
+        <div className="h-px flex-1" style={{ background: "var(--border-bright)" }} />
         <div
-          className="w-2 h-2 rotate-45"
+          className="h-2 w-2 rotate-45"
           style={{ background: "var(--primary)", boxShadow: "0 0 8px var(--primary)" }}
         />
-        <div className="flex-1 h-px" style={{ background: "var(--border-bright)" }} />
+        <div className="h-px flex-1" style={{ background: "var(--border-bright)" }} />
       </div>
 
       {/* Tagline */}
-      <p className="text-sm sm:text-base text-muted-foreground leading-snug max-w-md text-balance">
+      <p className="max-w-md text-balance text-xs leading-snug text-muted-foreground sm:text-sm">
         We are currently building something{" "}
         <span style={{ color: "var(--primary)" }}>powerful</span>. Our website is under
         construction and will be ready soon.
       </p>
 
       {/* Countdown + contact */}
-      <div className="flex flex-col items-center gap-4 sm:gap-5 w-full font-sans">
-        <CountdownTimer />
+      <div className="flex w-full shrink-0 flex-col items-center gap-2 font-sans sm:gap-3">
+        <CountdownTimer compact />
 
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-base sm:text-lg text-muted-foreground">
+        <div className="flex flex-col items-center gap-1.5 text-sm text-muted-foreground sm:flex-row sm:gap-3">
           <span
-            className="px-4 py-1.5 rounded-md border text-base sm:text-lg font-medium tracking-[0.15em] uppercase"
+            className="rounded-md border px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] sm:text-sm"
             style={{ borderColor: "var(--border-bright)", color: "var(--primary-dim)" }}
           >
             Get in touch
           </span>
           <a
             href="mailto:admin@kawie-digital.com"
-            className="text-base sm:text-lg font-normal transition-colors hover:text-foreground"
+            className="text-xs font-normal transition-colors hover:text-foreground sm:text-sm"
             style={{ color: "var(--foreground)" }}
           >
             admin@kawie-digital.com
@@ -84,10 +88,13 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Footer note */}
-      <p className="text-xs sm:text-sm text-muted-foreground font-mono tracking-widest uppercase opacity-40">
-        &copy; {new Date().getFullYear()} Kawie Digital Solution Sdn Bhd
-      </p>
+      {/* Admin dot + copyright */}
+      <div className="mt-0.5 flex shrink-0 flex-col items-center gap-0.5">
+        {adminTrigger}
+        <p className="text-[10px] text-muted-foreground opacity-50 sm:text-[11px]">
+          &copy; {new Date().getFullYear()} Kawie Digital Solutions Sdn Bhd
+        </p>
+      </div>
     </section>
   )
 }

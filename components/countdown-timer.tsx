@@ -35,13 +35,18 @@ function pad(n: number) {
 interface UnitBoxProps {
   value: number
   label: string
+  compact?: boolean
 }
 
-function UnitBox({ value, label }: UnitBoxProps) {
+function UnitBox({ value, label, compact }: UnitBoxProps) {
   return (
-    <div className="flex flex-col items-center gap-1.5">
+    <div className={`flex flex-col items-center ${compact ? "gap-1" : "gap-1.5"}`}>
       <div
-        className="w-[4.5rem] sm:w-20 md:w-24 h-[4.5rem] sm:h-20 md:h-24 flex items-center justify-center rounded-lg border font-sans text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums tracking-tight"
+        className={
+          compact
+            ? "flex h-14 w-14 items-center justify-center rounded-lg border font-sans text-2xl font-semibold tabular-nums tracking-tight sm:h-16 sm:w-16 sm:text-3xl"
+            : "flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-lg border font-sans text-3xl font-semibold tabular-nums tracking-tight sm:h-20 sm:w-20 sm:text-4xl md:h-24 md:w-24 md:text-5xl"
+        }
         style={{
           borderColor: "var(--border-bright)",
           background: "rgba(0,229,212,0.04)",
@@ -53,7 +58,7 @@ function UnitBox({ value, label }: UnitBoxProps) {
         {pad(value)}
       </div>
       <span
-        className="text-sm sm:text-base font-medium uppercase tracking-[0.2em] font-sans"
+        className={`font-sans font-medium uppercase tracking-[0.2em] ${compact ? "text-[10px] sm:text-xs" : "text-sm sm:text-base"}`}
         style={{ color: "var(--muted-foreground)" }}
       >
         {label}
@@ -62,7 +67,7 @@ function UnitBox({ value, label }: UnitBoxProps) {
   )
 }
 
-export default function CountdownTimer() {
+export default function CountdownTimer({ compact = false }: { compact?: boolean }) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(getTimeLeft())
   const [mounted, setMounted] = useState(false)
 
@@ -76,9 +81,9 @@ export default function CountdownTimer() {
 
   if (!mounted) {
     return (
-      <div className="flex gap-3 sm:gap-4 md:gap-5" aria-label="Countdown timer loading">
+      <div className={`flex ${compact ? "gap-2 sm:gap-2.5" : "gap-3 sm:gap-4 md:gap-5"}`} aria-label="Countdown timer loading">
         {["Days", "Hours", "Mins", "Secs"].map((label) => (
-          <UnitBox key={label} value={0} label={label} />
+          <UnitBox key={label} value={0} label={label} compact={compact} />
         ))}
       </div>
     )
@@ -86,15 +91,15 @@ export default function CountdownTimer() {
 
   return (
     <div
-      className="flex gap-3 sm:gap-4 md:gap-5"
+      className={`flex ${compact ? "gap-2 sm:gap-2.5" : "gap-3 sm:gap-4 md:gap-5"}`}
       role="timer"
       aria-label="Countdown to launch"
       aria-live="polite"
     >
-      <UnitBox value={timeLeft.days} label="Days" />
-      <UnitBox value={timeLeft.hours} label="Hours" />
-      <UnitBox value={timeLeft.minutes} label="Mins" />
-      <UnitBox value={timeLeft.seconds} label="Secs" />
+      <UnitBox value={timeLeft.days} label="Days" compact={compact} />
+      <UnitBox value={timeLeft.hours} label="Hours" compact={compact} />
+      <UnitBox value={timeLeft.minutes} label="Mins" compact={compact} />
+      <UnitBox value={timeLeft.seconds} label="Secs" compact={compact} />
     </div>
   )
 }

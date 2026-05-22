@@ -41,19 +41,24 @@ export default function Page() {
   }
 
   return (
-    <main className="relative h-dvh w-full overflow-hidden bg-background flex flex-col items-center justify-center">
+    <main
+      className="relative w-full overflow-hidden bg-background flex flex-col items-center justify-center"
+      style={{ minHeight: "100vh", height: "100vh" }}
+    >
       <CircuitBackground />
-      <HeroSection />
-
-      <button
-        type="button"
-        onClick={() => setModalOpen(true)}
-        aria-label="Admin access"
-        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-20 cursor-pointer border-0 bg-transparent p-1 text-[11px] transition-colors duration-200 hover:text-[#00c6d7]"
-        style={{ color: "rgba(0,198,215,0.4)" }}
-      >
-        ●
-      </button>
+      <HeroSection
+        adminTrigger={
+          <button
+            type="button"
+            onClick={() => setModalOpen(true)}
+            aria-label="Admin access"
+            className="cursor-pointer border-0 bg-transparent p-0 text-[14px] leading-none transition-colors duration-200 hover:text-[#00c6d7]"
+            style={{ color: "rgba(0,198,215,0.5)" }}
+          >
+            ●
+          </button>
+        }
+      />
 
       {modalOpen && (
         <div
