@@ -57,7 +57,7 @@ export default function Training() {
               style={{
                 fontFamily: 'var(--font-dm-sans)',
                 fontSize: '15px',
-                color: '#8b90a0',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.7,
                 marginBottom: '32px',
               }}
@@ -95,7 +95,7 @@ export default function Training() {
                     style={{
                       fontFamily: 'var(--font-dm-sans)',
                       fontSize: '14px',
-                      color: '#8b90a0',
+                      color: 'var(--text-secondary)',
                     }}
                   >
                     {s.label}
@@ -110,7 +110,7 @@ export default function Training() {
             <div
               style={{
                 background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.10)',
                 borderRadius: '20px',
                 padding: '36px',
               }}
@@ -136,7 +136,7 @@ export default function Training() {
                   <div style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 700, fontSize: '16px', color: '#ffffff' }}>
                     Coach Ariffin
                   </div>
-                  <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: '#8b90a0' }}>
+                  <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: 'var(--text-secondary)' }}>
                     Trainer & Program Mentor · Kawie Digital
                   </div>
                 </div>
@@ -156,7 +156,7 @@ export default function Training() {
                 }}
               >
                 <span style={{ fontSize: '14px', color: '#00c6d7' }}>📅</span>
-                <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: '#8b90a0' }}>
+                <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: 'var(--text-secondary)' }}>
                   June 2026 · Cyber9HUB @ Ayerspot
                 </span>
               </div>
@@ -165,7 +165,7 @@ export default function Training() {
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
                   fontSize: '14px',
-                  color: '#8b90a0',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.65,
                   marginBottom: '24px',
                 }}

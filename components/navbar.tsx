@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -34,23 +35,26 @@ export default function Navbar() {
     >
       <div className="container-kawie" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
         {/* Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
-          <div
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', minWidth: 0 }}>
+          <Image
+            src="/kawie-logo.jpg"
+            alt="Kawie Digital Solutions"
+            width={40}
+            height={40}
+            style={{ borderRadius: 8, flexShrink: 0 }}
+            priority
+          />
+          <span
             style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '8px',
-              background: '#00c6d7',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
+              fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: 16,
+              color: '#ffffff',
+              lineHeight: 1.2,
             }}
+            className="hidden-mobile-brand"
           >
-            <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, color: '#0a0c10', fontSize: '16px', letterSpacing: '-0.03em' }}>K</span>
-          </div>
-          <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, fontSize: '18px', color: '#ffffff', letterSpacing: '-0.03em' }}>
-            kawie
+            Kawie Digital Solutions Sdn Bhd
           </span>
         </a>
 
@@ -61,7 +65,7 @@ export default function Navbar() {
               key={l.label}
               href={l.href}
               style={{
-                color: '#8b90a0',
+                color: 'var(--text-secondary)',
                 textDecoration: 'none',
                 fontSize: '14px',
                 fontWeight: 400,
@@ -69,7 +73,7 @@ export default function Navbar() {
                 transition: 'color 0.15s ease',
               }}
               onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ffffff')}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#8b90a0')}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
             >
               {l.label}
             </a>
@@ -151,7 +155,7 @@ export default function Navbar() {
                 href={l.href}
                 onClick={() => setOpen(false)}
                 style={{
-                  color: '#8b90a0',
+                  color: 'var(--text-secondary)',
                   textDecoration: 'none',
                   fontSize: '16px',
                   fontWeight: 400,
@@ -176,10 +180,12 @@ export default function Navbar() {
         @media (min-width: 768px) {
           .hidden-mobile { display: flex !important; }
           .show-mobile { display: none !important; }
+          .hidden-mobile-brand { display: inline !important; }
         }
         @media (max-width: 767px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          .hidden-mobile-brand { display: none !important; }
         }
       `}</style>
     </header>

@@ -26,7 +26,7 @@ export default function Footer() {
     <footer
       style={{
         background: '#080a0d',
-        borderTop: '1px solid rgba(255,255,255,0.06)',
+        borderTop: '1px solid rgba(255,255,255,0.10)',
         paddingTop: '60px',
         paddingBottom: '32px',
       }}
@@ -42,30 +42,25 @@ export default function Footer() {
         >
           {/* Col 1 — Brand */}
           <div style={{ gridColumn: 'span 1' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-              <div
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <img src="/kawie-logo.jpg" alt="Kawie Digital Solutions" height={40} width={40} style={{ borderRadius: 8, flexShrink: 0 }} />
+              <span
                 style={{
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '8px',
-                  background: '#00c6d7',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
+                  fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: 16,
+                  color: '#ffffff',
+                  lineHeight: 1.2,
                 }}
               >
-                <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, color: '#0a0c10', fontSize: '16px' }}>K</span>
-              </div>
-              <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, fontSize: '18px', color: '#ffffff', letterSpacing: '-0.03em' }}>
-                kawie
+                Kawie Digital Solutions Sdn Bhd
               </span>
             </div>
             <p
               style={{
                 fontFamily: 'var(--font-dm-sans)',
-                fontSize: '13px',
-                color: '#555d70',
+                fontSize: '14px',
+                color: 'var(--text-secondary)',
                 lineHeight: 1.65,
                 marginBottom: '12px',
               }}
@@ -114,12 +109,12 @@ export default function Footer() {
                       style={{
                         fontFamily: 'var(--font-dm-sans)',
                         fontSize: '13px',
-                        color: '#8b90a0',
+                        color: 'var(--text-secondary)',
                         textDecoration: 'none',
                         transition: 'color 0.15s ease',
                       }}
                       onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#ffffff')}
-                      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#8b90a0')}
+                      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
                     >
                       {item.label}
                     </a>
@@ -133,7 +128,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.05)',
+            borderTop: '1px solid rgba(255,255,255,0.10)',
             paddingTop: '24px',
             display: 'flex',
             alignItems: 'center',

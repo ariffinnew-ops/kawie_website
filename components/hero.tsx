@@ -11,21 +11,7 @@ export default function Hero() {
         padding: '80px 0',
       }}
     >
-      {/* Radial cyan glow */}
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          top: '-10%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '900px',
-          height: '600px',
-          background: 'radial-gradient(ellipse at center, rgba(0,198,215,0.15) 0%, transparent 70%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
+      <div className="hero-cyan-glow" aria-hidden />
 
       <div className="container-kawie reveal" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}>
         {/* Eyebrow */}
@@ -57,7 +43,7 @@ export default function Hero() {
             fontFamily: 'var(--font-dm-sans)',
             fontWeight: 300,
             fontSize: 'clamp(18px, 2.5vw, 26px)',
-            color: '#8b90a0',
+            color: 'var(--text-secondary)',
             marginBottom: '20px',
             lineHeight: 1.4,
           }}
@@ -70,8 +56,8 @@ export default function Hero() {
           style={{
             fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
-            fontSize: '16px',
-            color: '#555d70',
+            fontSize: '17px',
+            color: 'var(--text-secondary)',
             lineHeight: 1.7,
             maxWidth: '640px',
             margin: '0 auto 40px',

@@ -85,7 +85,7 @@ export default function Roadmap() {
               className="card-hover"
               style={{
                 background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.07)',
+                border: '1px solid rgba(255,255,255,0.10)',
                 borderRadius: '14px',
                 padding: '28px 24px',
                 cursor: 'default',
@@ -95,7 +95,7 @@ export default function Roadmap() {
                 ;(e.currentTarget as HTMLElement).style.background = '#2e3447'
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.07)'
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)'
                 ;(e.currentTarget as HTMLElement).style.background = '#1c2030'
               }}
             >
@@ -132,7 +132,7 @@ export default function Roadmap() {
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
                   fontSize: '13px',
-                  color: '#8b90a0',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.6,
                 }}
               >

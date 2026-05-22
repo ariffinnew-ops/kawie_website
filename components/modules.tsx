@@ -75,7 +75,7 @@ export default function Modules() {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: '0',
-            border: '1px solid rgba(255,255,255,0.07)',
+            border: '1px solid rgba(255,255,255,0.10)',
             borderRadius: '20px',
             overflow: 'hidden',
           }}
@@ -87,7 +87,7 @@ export default function Modules() {
               style={{
                 background: '#0a0c10',
                 borderTop: `3px solid ${mod.color}`,
-                borderRight: i < modules.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none',
+                borderRight: i < modules.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none',
                 padding: '40px 32px',
                 transition: 'background 0.2s ease',
               }}
@@ -134,7 +134,7 @@ export default function Modules() {
                 style={{
                   fontFamily: 'var(--font-dm-sans)',
                   fontSize: '14px',
-                  color: '#8b90a0',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.65,
                   marginBottom: '24px',
                 }}

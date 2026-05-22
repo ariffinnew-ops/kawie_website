@@ -47,7 +47,7 @@ export default function CtaBand() {
           style={{
             fontFamily: 'var(--font-dm-sans)',
             fontSize: '16px',
-            color: '#8b90a0',
+            color: 'var(--text-secondary)',
             lineHeight: 1.65,
             marginBottom: '40px',
           }}

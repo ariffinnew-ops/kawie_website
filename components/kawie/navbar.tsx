@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 const NAV_LINKS = [
@@ -16,29 +17,28 @@ export default function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{ backdropFilter: "blur(12px)", background: "rgba(10,12,16,0.8)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}
+      style={{ backdropFilter: "blur(12px)", background: "rgba(10,12,16,0.8)", borderBottom: "1px solid rgba(255,255,255,0.10)" }}
     >
       <div className="mx-auto flex items-center justify-between px-6" style={{ maxWidth: 1160, height: 64 }}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 no-underline">
+        <Link href="/" className="flex items-center gap-3 no-underline min-w-0">
+          <Image
+            src="/kawie-logo.jpg"
+            alt="Kawie Digital Solutions"
+            width={40}
+            height={40}
+            className="rounded-lg shrink-0"
+            priority
+          />
           <span
-            className="flex items-center justify-center font-serif font-extrabold text-sm"
+            className="hidden sm:block text-white leading-tight"
             style={{
-              width: 32,
-              height: 32,
-              borderRadius: 8,
-              background: "#00c6d7",
-              color: "#0a0c10",
-              letterSpacing: "-0.03em",
+              fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: 16,
             }}
           >
-            K
-          </span>
-          <span
-            className="font-serif font-extrabold text-white text-lg"
-            style={{ letterSpacing: "-0.03em" }}
-          >
-            kawie
+            Kawie Digital Solutions Sdn Bhd
           </span>
         </Link>
 
@@ -49,9 +49,9 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className="text-sm font-sans font-normal transition-colors duration-200"
-              style={{ color: "#8b90a0" }}
+              style={{ color: "var(--text-secondary)" }}
               onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#ffffff")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
             >
               {link.label}
             </Link>
@@ -115,14 +115,14 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           className="md:hidden px-6 pb-6 flex flex-col gap-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               className="font-sans text-sm py-2"
-              style={{ color: "#8b90a0" }}
+              style={{ color: "var(--text-secondary)" }}
               onClick={() => setMobileOpen(false)}
             >
               {link.label}

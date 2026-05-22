@@ -1,10 +1,11 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export default function Footer() {
   return (
     <footer
       className="w-full"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.07)", background: "#0a0c10" }}
+      style={{ borderTop: "1px solid rgba(255,255,255,0.10)", background: "#0d1018" }}
     >
       <div
         className="mx-auto px-6 py-16 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4"
@@ -12,28 +13,26 @@ export default function Footer() {
       >
         {/* Col 1 — Brand */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/kawie-logo.jpg"
+              alt="Kawie Digital Solutions"
+              width={40}
+              height={40}
+              className="rounded-lg shrink-0"
+            />
             <span
-              className="flex items-center justify-center font-serif font-extrabold text-sm"
+              className="text-white leading-tight"
               style={{
-                width: 32,
-                height: 32,
-                borderRadius: 8,
-                background: "#00c6d7",
-                color: "#0a0c10",
-                letterSpacing: "-0.03em",
+                fontFamily: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: 16,
               }}
             >
-              K
-            </span>
-            <span
-              className="font-serif font-extrabold text-white text-lg"
-              style={{ letterSpacing: "-0.03em" }}
-            >
-              kawie
+              Kawie Digital Solutions Sdn Bhd
             </span>
           </div>
-          <p className="font-sans text-sm leading-relaxed" style={{ color: "#8b90a0" }}>
+          <p className="font-sans leading-relaxed" style={{ color: "var(--text-secondary)", fontSize: 15 }}>
             Kawie Digital Solutions Sdn Bhd — Unified Enterprise Operating System for modern operations teams.
           </p>
           <span
@@ -64,7 +63,7 @@ export default function Footer() {
                   href="#"
                   className="font-sans text-sm transition-colors duration-200"
                   style={{ color: "#555d70" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                   onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
                 >
                   {item}
@@ -90,7 +89,7 @@ export default function Footer() {
                   href="#"
                   className="font-sans text-sm transition-colors duration-200"
                   style={{ color: "#555d70" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                   onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
                 >
                   {item}
@@ -106,7 +105,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5">
             <li>
               <a href="#" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
               >
                 Training — UEOS-APOG
@@ -114,7 +113,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="mailto:admin@kawie-digital.com" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
               >
                 admin@kawie-digital.com
@@ -122,7 +121,7 @@ export default function Footer() {
             </li>
             <li>
               <a href="tel:+60112173 4434" className="font-sans text-sm transition-colors duration-200" style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
               >
                 +6011-2173 4434
@@ -135,7 +134,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="font-sans text-sm transition-colors duration-200"
                 style={{ color: "#555d70" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#8b90a0")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--text-secondary)")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#555d70")}
               >
                 WhatsApp Channel
@@ -148,7 +147,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         className="mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-2"
-        style={{ maxWidth: 1160, borderTop: "1px solid rgba(255,255,255,0.07)" }}
+        style={{ maxWidth: 1160, borderTop: "1px solid rgba(255,255,255,0.10)" }}
       >
         <p className="font-sans text-xs" style={{ color: "#555d70" }}>
           &copy; 2026 Kawie Digital Solutions Sdn Bhd. All rights reserved.

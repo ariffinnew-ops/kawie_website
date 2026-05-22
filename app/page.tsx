@@ -33,18 +33,38 @@ export default function Home() {
   }, [])
 
   return (
-    <main style={{ background: '#0a0c10' }}>
+    <main className="landing-page" style={{ background: 'var(--section-odd)' }}>
       <Navbar />
-      <Hero />
-      <ProblemBand />
-      <UeosIntro />
-      <Modules />
-      <Industries />
-      <Training />
-      <Security />
-      <Roadmap />
-      <CtaBand />
-      <Footer />
+      <div className="section-wrap-odd">
+        <Hero />
+      </div>
+      <div className="section-wrap-even">
+        <ProblemBand />
+      </div>
+      <div className="section-wrap-odd">
+        <UeosIntro />
+      </div>
+      <div className="section-wrap-even">
+        <Modules />
+      </div>
+      <div className="section-wrap-odd">
+        <Industries />
+      </div>
+      <div className="section-wrap-even">
+        <Training />
+      </div>
+      <div className="section-wrap-odd">
+        <Security />
+      </div>
+      <div className="section-wrap-even">
+        <Roadmap />
+      </div>
+      <div className="section-wrap-odd">
+        <CtaBand />
+      </div>
+      <div className="section-wrap-even">
+        <Footer />
+      </div>
     </main>
   )
 }

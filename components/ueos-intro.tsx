@@ -53,7 +53,7 @@ function ModuleRow({ items, header }: { items: typeof coreSystem; header: string
               border: '1px solid rgba(255,255,255,0.06)',
             }}
           >
-            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: '#8b90a0' }}>
+            <span style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: 'var(--text-secondary)' }}>
               {item.name}
             </span>
             <span
@@ -100,7 +100,7 @@ export default function UeosIntro() {
               <br />
               Every operation.
             </h2>
-            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '15px', color: '#8b90a0', lineHeight: 1.7, marginBottom: '32px' }}>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '32px' }}>
               UEOS consolidates disparate systems into a unified, integrated platform — designed
               specifically for Oil &amp; Gas, with the flexibility to serve any industry vertical.
             </p>
