@@ -102,7 +102,7 @@ export default function Modules() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                 <span
                   style={{
-                    fontFamily: 'var(--font-syne)',
+                    fontFamily: 'var(--font-plus-jakarta-sans)',
                     fontWeight: 800,
                     fontSize: '13px',
                     color: mod.color,

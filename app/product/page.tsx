@@ -45,7 +45,7 @@ const C = {
 }
 
 const font = {
-  heading: "var(--font-syne), Syne, sans-serif",
+  heading: "var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif",
   body: "var(--font-dm-sans), DM Sans, sans-serif",
 }
 

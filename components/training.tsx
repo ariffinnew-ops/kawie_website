@@ -82,7 +82,7 @@ export default function Training() {
                 >
                   <span
                     style={{
-                      fontFamily: 'var(--font-syne)',
+                      fontFamily: 'var(--font-plus-jakarta-sans)',
                       fontWeight: 800,
                       fontSize: '12px',
                       color: '#00c6d7',
@@ -130,10 +130,10 @@ export default function Training() {
                     flexShrink: 0,
                   }}
                 >
-                  <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, fontSize: '18px', color: '#00c6d7' }}>A</span>
+                  <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, fontSize: '18px', color: '#00c6d7' }}>A</span>
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '16px', color: '#ffffff' }}>
+                  <div style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 700, fontSize: '16px', color: '#ffffff' }}>
                     Coach Ariffin
                   </div>
                   <div style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '13px', color: '#8b90a0' }}>

@@ -162,7 +162,7 @@ export default function UeosIntro() {
 
               {/* Header */}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
-                <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: '14px', color: '#ffffff', letterSpacing: '-0.02em' }}>
+                <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 700, fontSize: '14px', color: '#ffffff', letterSpacing: '-0.02em' }}>
                   CORE SYSTEM
                 </span>
                 <span

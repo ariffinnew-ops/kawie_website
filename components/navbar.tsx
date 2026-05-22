@@ -47,9 +47,9 @@ export default function Navbar() {
               flexShrink: 0,
             }}
           >
-            <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, color: '#0a0c10', fontSize: '16px', letterSpacing: '-0.03em' }}>K</span>
+            <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, color: '#0a0c10', fontSize: '16px', letterSpacing: '-0.03em' }}>K</span>
           </div>
-          <span style={{ fontFamily: 'var(--font-syne)', fontWeight: 800, fontSize: '18px', color: '#ffffff', letterSpacing: '-0.03em' }}>
+          <span style={{ fontFamily: 'var(--font-plus-jakarta-sans)', fontWeight: 800, fontSize: '18px', color: '#ffffff', letterSpacing: '-0.03em' }}>
             kawie
           </span>
         </a>
