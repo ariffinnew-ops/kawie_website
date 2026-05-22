@@ -101,7 +101,7 @@ export default function HeroSection({ onOpenAdmin }: HeroSectionProps) {
               onOpenAdmin?.()
             }
           }}
-          className="cursor-pointer no-underline"
+          className="cursor-default no-underline"
           style={{ color: "inherit" }}
           aria-label="Admin access"
         >
