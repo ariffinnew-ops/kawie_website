@@ -78,7 +78,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden-mobile">
-          <a href="mailto:admin@kawie-digital.com" className="btn-primary" style={{ fontSize: '14px', padding: '9px 22px' }}>
+          <a href="/contact" className="btn-primary" style={{ fontSize: '14px', padding: '9px 22px' }}>
             Book a Demo
           </a>
         </div>
@@ -164,7 +164,7 @@ export default function Navbar() {
               </a>
             ))}
             <div style={{ marginTop: '16px' }}>
-              <a href="mailto:admin@kawie-digital.com" className="btn-primary">
+              <a href="/contact" className="btn-primary">
                 Book a Demo
               </a>
             </div>
