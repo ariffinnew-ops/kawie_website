@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 import HeroSection from "@/components/hero-section"
 import CircuitBackground from "@/components/circuit-background"
 
-const ADMIN_PASSWORD = "digital2026"
+const ADMIN_PASSWORD = "kawie2026"
 const ADMIN_REDIRECT = "https://kawie-main.vercel.app"
 
 export default function Page() {
@@ -42,23 +42,11 @@ export default function Page() {
 
   return (
     <main
-      className="relative w-full overflow-hidden bg-background flex flex-col items-center justify-center"
-      style={{ minHeight: "100vh", height: "100vh" }}
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background"
+      style={{ height: "100vh" }}
     >
       <CircuitBackground />
-      <HeroSection
-        adminTrigger={
-          <button
-            type="button"
-            onClick={() => setModalOpen(true)}
-            aria-label="Admin access"
-            className="cursor-pointer border-0 bg-transparent p-0 text-[14px] leading-none transition-colors duration-200 hover:text-[#00c6d7]"
-            style={{ color: "rgba(0,198,215,0.5)" }}
-          >
-            ●
-          </button>
-        }
-      />
+      <HeroSection onOpenAdmin={() => setModalOpen(true)} />
 
       {modalOpen && (
         <div

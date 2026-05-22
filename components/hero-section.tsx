@@ -5,12 +5,14 @@ import StatusBadge from "@/components/status-badge"
 import CountdownTimer from "@/components/countdown-timer"
 
 type HeroSectionProps = {
-  adminTrigger?: React.ReactNode
+  onOpenAdmin?: () => void
 }
 
-export default function HeroSection({ adminTrigger }: HeroSectionProps) {
+export default function HeroSection({ onOpenAdmin }: HeroSectionProps) {
+  const year = new Date().getFullYear()
+
   return (
-    <section className="relative z-10 flex min-h-0 w-full max-w-3xl shrink flex-col items-center justify-center gap-1 px-3 py-1 text-center sm:gap-1.5">
+    <section className="relative z-10 flex w-full max-w-4xl flex-col items-center justify-center gap-2 px-4 text-center">
 
       {/* Logo */}
       <div className="relative shrink-0">
@@ -22,19 +24,18 @@ export default function HeroSection({ adminTrigger }: HeroSectionProps) {
         <Image
           src="/kawie-logo.jpg"
           alt="Kawie Digital Solution logo — neon K on circuit board"
-          width={150}
-          height={150}
-          className="relative h-[min(28vw,150px)] w-[min(28vw,150px)] rounded-2xl object-cover"
+          width={200}
+          height={200}
+          className="relative h-[200px] w-[200px] rounded-2xl object-cover"
           priority
         />
       </div>
 
-      {/* Status badge */}
       <StatusBadge />
 
       {/* Company name */}
       <h1
-        className="max-w-[95vw] text-[clamp(1rem,3.5vw,1.75rem)] font-semibold uppercase leading-tight tracking-[0.08em] text-foreground whitespace-nowrap"
+        className="max-w-[95vw] whitespace-nowrap text-[clamp(1.35rem,5vw,2.5rem)] font-semibold uppercase leading-tight tracking-[0.08em] text-foreground"
         style={{ fontFamily: "var(--font-barlow), sans-serif" }}
       >
         Kawie{" "}
@@ -61,26 +62,26 @@ export default function HeroSection({ adminTrigger }: HeroSectionProps) {
       </div>
 
       {/* Tagline */}
-      <p className="max-w-md text-balance text-xs leading-snug text-muted-foreground sm:text-sm">
+      <p className="max-w-md text-balance text-sm leading-snug text-muted-foreground">
         We are currently building something{" "}
         <span style={{ color: "var(--primary)" }}>powerful</span>. Our website is under
         construction and will be ready soon.
       </p>
 
       {/* Countdown + contact */}
-      <div className="flex w-full shrink-0 flex-col items-center gap-2 font-sans sm:gap-3">
-        <CountdownTimer compact />
+      <div className="flex w-full flex-col items-center gap-2 font-sans">
+        <CountdownTimer large />
 
-        <div className="flex flex-col items-center gap-1.5 text-sm text-muted-foreground sm:flex-row sm:gap-3">
+        <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-4">
           <span
-            className="rounded-md border px-3 py-1 text-xs font-medium uppercase tracking-[0.15em] sm:text-sm"
+            className="rounded-md border px-3 py-1 text-sm font-medium uppercase tracking-[0.15em]"
             style={{ borderColor: "var(--border-bright)", color: "var(--primary-dim)" }}
           >
             Get in touch
           </span>
           <a
             href="mailto:admin@kawie-digital.com"
-            className="text-xs font-normal transition-colors hover:text-foreground sm:text-sm"
+            className="text-sm font-normal transition-colors hover:text-foreground"
             style={{ color: "var(--foreground)" }}
           >
             admin@kawie-digital.com
@@ -88,13 +89,26 @@ export default function HeroSection({ adminTrigger }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Admin dot + copyright */}
-      <div className="mt-0.5 flex shrink-0 flex-col items-center gap-0.5">
-        {adminTrigger}
-        <p className="text-[10px] text-muted-foreground opacity-50 sm:text-[11px]">
-          &copy; {new Date().getFullYear()} Kawie Digital Solutions Sdn Bhd
-        </p>
-      </div>
+      {/* Copyright — © opens admin modal */}
+      <p className="text-xs text-muted-foreground opacity-50 sm:text-sm">
+        <span
+          role="button"
+          tabIndex={0}
+          onClick={onOpenAdmin}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault()
+              onOpenAdmin?.()
+            }
+          }}
+          className="cursor-pointer no-underline"
+          style={{ color: "inherit" }}
+          aria-label="Admin access"
+        >
+          ©
+        </span>{" "}
+        {year} Kawie Digital Solutions Sdn Bhd
+      </p>
     </section>
   )
 }
