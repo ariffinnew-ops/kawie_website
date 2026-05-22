@@ -2,16 +2,16 @@ import Image from "next/image"
 
 const columnHeadingStyle: React.CSSProperties = {
   color: "#ffffff",
-  fontSize: 14,
+  fontSize: 13,
   fontWeight: 700,
-  letterSpacing: "0.1em",
+  letterSpacing: "0.12em",
   textTransform: "uppercase",
   marginBottom: 20,
   fontFamily: "var(--font-dm-sans), 'DM Sans', system-ui, sans-serif",
 }
 
 const linkStyle: React.CSSProperties = {
-  color: "#a0a8bc",
+  color: "#c8d0e0",
   fontSize: 15,
   lineHeight: 2.2,
   fontFamily: "var(--font-dm-sans), 'DM Sans', system-ui, sans-serif",
@@ -28,7 +28,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
         ;(e.currentTarget as HTMLElement).style.color = "#00c6d7"
       }}
       onMouseLeave={(e) => {
-        ;(e.currentTarget as HTMLElement).style.color = "#a0a8bc"
+        ;(e.currentTarget as HTMLElement).style.color = "#c8d0e0"
       }}
     >
       {children}
@@ -41,25 +41,12 @@ export default function Footer() {
     <footer
       className="w-full relative"
       style={{
-        background: "#0d1117",
-        borderTop: "1px solid rgba(0,198,215,0.2)",
+        background: "#060810",
+        borderTop: "2px solid rgba(0,198,215,0.3)",
         paddingTop: 80,
         paddingBottom: 0,
       }}
     >
-      {/* Top glow line */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 1,
-          background: "linear-gradient(90deg, transparent, #00c6d7, transparent)",
-        }}
-      />
-
       <div
         className="mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
         style={{ maxWidth: 1160, gap: 48, paddingBottom: 48 }}
@@ -89,7 +76,7 @@ export default function Footer() {
           <p
             className="font-sans"
             style={{
-              color: "#a0a8bc",
+              color: "#c8d0e0",
               fontSize: 14,
               lineHeight: 1.8,
               marginTop: 12,
@@ -102,9 +89,9 @@ export default function Footer() {
             style={{
               color: "#00c6d7",
               fontSize: 12,
-              fontWeight: 600,
+              fontWeight: 700,
               textTransform: "uppercase",
-              letterSpacing: "0.1em",
+              letterSpacing: "0.2em",
               marginTop: 16,
             }}
           >
@@ -171,7 +158,7 @@ export default function Footer() {
                   ;(e.currentTarget as HTMLElement).style.color = "#00c6d7"
                 }}
                 onMouseLeave={(e) => {
-                  ;(e.currentTarget as HTMLElement).style.color = "#a0a8bc"
+                  ;(e.currentTarget as HTMLElement).style.color = "#c8d0e0"
                 }}
               >
                 WhatsApp Channel
@@ -184,7 +171,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         style={{
-          background: "#080a0f",
+          background: "#040609",
           borderTop: "1px solid rgba(255,255,255,0.08)",
         }}
       >
@@ -192,10 +179,10 @@ export default function Footer() {
           className="mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3"
           style={{ maxWidth: 1160, padding: "20px 0" }}
         >
-          <p className="font-sans text-center md:text-left" style={{ color: "#6b7590", fontSize: 13, margin: 0 }}>
+          <p className="font-sans text-center md:text-left" style={{ color: "#8892a8", fontSize: 13, margin: 0 }}>
             &copy; 2026 Kawie Digital Solutions Sdn Bhd (202601019532). All rights reserved.
           </p>
-          <p className="font-sans text-center md:text-right" style={{ color: "#6b7590", fontSize: 13, margin: 0 }}>
+          <p className="font-sans text-center md:text-right" style={{ color: "#8892a8", fontSize: 13, margin: 0 }}>
             Powered by Next.js &middot; Supabase &middot; Vercel
           </p>
         </div>

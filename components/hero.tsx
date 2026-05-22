@@ -9,10 +9,10 @@ export default function Hero() {
         position: 'relative',
         overflow: 'hidden',
         padding: '80px 0',
+        background:
+          'radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,198,215,0.15) 0%, transparent 65%)',
       }}
     >
-      <div className="hero-cyan-glow" aria-hidden />
-
       <div className="container-kawie reveal" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '860px', margin: '0 auto' }}>
         {/* Eyebrow */}
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}>
@@ -24,10 +24,8 @@ export default function Hero() {
 
         {/* H1 */}
         <h1
-          className="font-heading"
+          className="font-heading text-6xl md:text-7xl lg:text-8xl font-bold"
           style={{
-            fontSize: 'clamp(40px, 8vw, 80px)',
-            color: '#ffffff',
             marginBottom: '20px',
             lineHeight: 1.0,
           }}
@@ -53,12 +51,10 @@ export default function Hero() {
 
         {/* Description */}
         <p
+          className="text-lg md:text-xl text-[#c8d0e0]"
           style={{
             fontFamily: 'var(--font-dm-sans)',
             fontWeight: 400,
-            fontSize: '17px',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.7,
             maxWidth: '640px',
             margin: '0 auto 40px',
           }}
@@ -96,7 +92,7 @@ export default function Hero() {
                 gap: '6px',
                 fontFamily: 'var(--font-dm-sans)',
                 fontSize: '12px',
-                color: '#555d70',
+                color: 'var(--text-muted)',
                 fontWeight: 400,
               }}
             >

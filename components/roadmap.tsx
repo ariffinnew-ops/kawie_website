@@ -57,7 +57,7 @@ const roadmapItems = [
 
 export default function Roadmap() {
   return (
-    <section className="section-pad" style={{ background: '#0a0c10' }}>
+    <section className="section-pad" style={{ background: 'var(--section-even)' }}>
       <div className="container-kawie">
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -80,25 +80,7 @@ export default function Roadmap() {
           }}
         >
           {roadmapItems.map((item) => (
-            <div
-              key={item.title}
-              className="card-hover"
-              style={{
-                background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '14px',
-                padding: '28px 24px',
-                cursor: 'default',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.12)'
-                ;(e.currentTarget as HTMLElement).style.background = '#2e3447'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)'
-                ;(e.currentTarget as HTMLElement).style.background = '#1c2030'
-              }}
-            >
+            <div key={item.title} className="card-hover kawie-card" style={{ cursor: 'default' }}>
               <span
                 style={{
                   display: 'inline-block',

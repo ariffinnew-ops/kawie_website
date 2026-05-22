@@ -55,7 +55,7 @@ const modules = [
 
 export default function Modules() {
   return (
-    <section className="section-pad" style={{ background: '#0a0c10' }}>
+    <section className="section-pad" style={{ background: 'var(--section-even)' }}>
       <div className="container-kawie">
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -74,29 +74,14 @@ export default function Modules() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '0',
-            border: '1px solid rgba(255,255,255,0.10)',
-            borderRadius: '20px',
-            overflow: 'hidden',
+            gap: '20px',
           }}
         >
-          {modules.map((mod, i) => (
+          {modules.map((mod) => (
             <div
               key={mod.abbr}
-              className="card-hover"
-              style={{
-                background: '#0a0c10',
-                borderTop: `3px solid ${mod.color}`,
-                borderRight: i < modules.length - 1 ? '1px solid rgba(255,255,255,0.10)' : 'none',
-                padding: '40px 32px',
-                transition: 'background 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.02)'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = '#0a0c10'
-              }}
+              className="card-hover kawie-card"
+              style={{ borderTop: `3px solid ${mod.color}` }}
             >
               {/* Module badge */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
@@ -152,7 +137,7 @@ export default function Modules() {
                       gap: '8px',
                       fontFamily: 'var(--font-dm-sans)',
                       fontSize: '13px',
-                      color: '#555d70',
+                      color: 'var(--text-muted)',
                       lineHeight: 1.5,
                     }}
                   >

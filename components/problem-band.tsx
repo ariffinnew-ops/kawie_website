@@ -23,7 +23,7 @@ const problems = [
 
 export default function ProblemBand() {
   return (
-    <section className="section-pad" style={{ background: '#0a0c10' }}>
+    <section className="section-pad" style={{ background: 'var(--section-even)' }}>
       <div className="container-kawie">
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -51,25 +51,7 @@ export default function ProblemBand() {
           }}
         >
           {problems.map((p) => (
-            <div
-              key={p.title}
-              className="card-hover"
-              style={{
-                background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '14px',
-                padding: '32px',
-                cursor: 'default',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.12)'
-                ;(e.currentTarget as HTMLElement).style.background = '#2e3447'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)'
-                ;(e.currentTarget as HTMLElement).style.background = '#1c2030'
-              }}
-            >
+            <div key={p.title} className="card-hover kawie-card" style={{ cursor: 'default' }}>
               <div
                 style={{
                   width: '40px',

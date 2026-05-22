@@ -4,7 +4,7 @@ export default function CtaBand() {
       id="contact"
       className="section-pad"
       style={{
-        background: '#0d0f14',
+        background: 'var(--bg)',
         position: 'relative',
         overflow: 'hidden',
       }}

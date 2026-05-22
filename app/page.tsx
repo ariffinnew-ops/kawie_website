@@ -11,7 +11,7 @@ import Training from '@/components/training'
 import Security from '@/components/security'
 import Roadmap from '@/components/roadmap'
 import CtaBand from '@/components/cta-band'
-import Footer from '@/components/footer'
+import Footer from '@/components/kawie/footer'
 
 export default function Home() {
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="landing-page" style={{ background: 'var(--section-odd)' }}>
+    <main className="landing-page" style={{ background: 'var(--bg)' }}>
       <Navbar />
       <div className="section-wrap-odd">
         <Hero />

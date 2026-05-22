@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${dmSans.variable} bg-[#0a0c10]`}>
+    <html lang="en" className={`${plusJakartaSans.variable} ${dmSans.variable} bg-[#080b14]`}>
       <body className="antialiased font-body">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

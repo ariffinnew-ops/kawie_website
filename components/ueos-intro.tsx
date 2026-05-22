@@ -79,7 +79,7 @@ function ModuleRow({ items, header }: { items: typeof coreSystem; header: string
 
 export default function UeosIntro() {
   return (
-    <section id="platform" className="section-pad" style={{ background: '#0a0c10' }}>
+    <section id="platform" className="section-pad" style={{ background: 'var(--bg)' }}>
       <div className="container-kawie">
         <div
           style={{
@@ -126,7 +126,7 @@ export default function UeosIntro() {
               ))}
             </div>
 
-            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '14px', color: '#555d70', lineHeight: 1.65, marginBottom: '32px' }}>
+            <p style={{ fontFamily: 'var(--font-dm-sans)', fontSize: '14px', color: 'var(--text-muted)', lineHeight: 1.65, marginBottom: '32px' }}>
               Your team always knows what&apos;s happening, what it costs, and who&apos;s accountable — in real time.
             </p>
             <a href="mailto:admin@kawie-digital.com" className="btn-primary">
@@ -138,9 +138,9 @@ export default function UeosIntro() {
           <div className="reveal">
             <div
               style={{
-                background: '#0a0c10',
-                border: '1px solid rgba(255,255,255,0.08)',
-                borderRadius: '20px',
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '14px',
                 padding: '32px',
                 position: 'relative',
                 overflow: 'hidden',

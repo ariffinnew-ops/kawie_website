@@ -33,7 +33,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <section id="industries" className="section-pad" style={{ background: '#0d0f14' }}>
+    <section id="industries" className="section-pad" style={{ background: 'var(--bg)' }}>
       <div className="container-kawie">
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -69,25 +69,7 @@ export default function Industries() {
           }}
         >
           {industries.map((ind) => (
-            <div
-              key={ind.name}
-              className="card-hover"
-              style={{
-                background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '14px',
-                padding: '28px 24px',
-                cursor: 'default',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,198,215,0.2)'
-                ;(e.currentTarget as HTMLElement).style.background = '#2e3447'
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.10)'
-                ;(e.currentTarget as HTMLElement).style.background = '#1c2030'
-              }}
-            >
+            <div key={ind.name} className="card-hover kawie-card" style={{ cursor: 'default' }}>
               <div style={{ fontSize: '28px', marginBottom: '14px' }}>{ind.icon}</div>
               <h3
                 className="font-heading"

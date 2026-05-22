@@ -8,7 +8,7 @@ const skills = [
 
 export default function Training() {
   return (
-    <section id="training" className="section-pad" style={{ background: '#0a0c10' }}>
+    <section id="training" className="section-pad" style={{ background: 'var(--section-even)' }}>
       <div className="container-kawie">
         {/* Header */}
         <div className="reveal" style={{ textAlign: 'center', marginBottom: '60px' }}>
@@ -75,9 +75,9 @@ export default function Training() {
                     alignItems: 'center',
                     gap: '16px',
                     padding: '16px 20px',
-                    background: '#1c2030',
-                    borderRadius: '10px',
-                    border: '1px solid rgba(255,255,255,0.06)',
+                    background: 'var(--surface)',
+                    borderRadius: '14px',
+                    border: '1px solid var(--border)',
                   }}
                 >
                   <span
@@ -109,10 +109,10 @@ export default function Training() {
           <div className="reveal">
             <div
               style={{
-                background: '#1c2030',
-                border: '1px solid rgba(255,255,255,0.10)',
-                borderRadius: '20px',
-                padding: '36px',
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: '14px',
+                padding: '32px',
               }}
             >
               {/* Coach header */}

@@ -28,7 +28,7 @@ export default function Navbar() {
         zIndex: 100,
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        background: scrolled ? 'rgba(10,12,16,0.92)' : 'rgba(10,12,16,0.8)',
+        background: scrolled ? 'rgba(8,11,20,0.92)' : 'rgba(8,11,20,0.8)',
         borderBottom: '1px solid rgba(255,255,255,0.06)',
         transition: 'background 0.3s ease',
       }}
