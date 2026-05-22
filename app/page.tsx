@@ -49,8 +49,8 @@ export default function Page() {
         type="button"
         onClick={() => setModalOpen(true)}
         aria-label="Admin access"
-        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-20 cursor-pointer border-0 bg-transparent p-1 text-[11px] transition-colors duration-200 hover:text-[rgba(255,255,255,0.3)]"
-        style={{ color: "#090d0d" }}
+        className="fixed bottom-3 left-1/2 -translate-x-1/2 z-20 cursor-pointer border-0 bg-transparent p-1 text-[11px] transition-colors duration-200 hover:text-[#00c6d7]"
+        style={{ color: "rgba(0,198,215,0.4)" }}
       >
         ●
       </button>
