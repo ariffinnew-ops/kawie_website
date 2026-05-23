@@ -1,0 +1,132 @@
+interface Service {
+  icon: string
+  title: string
+  heading: string
+  description: string
+  features: string[]
+  topBorderColor: string
+}
+
+const services: Service[] = [
+  {
+    icon: "💻",
+    title: "Custom Software Development",
+    heading: "We build what you need.",
+    description:
+      "From web applications to enterprise platforms — we design, develop, and maintain custom software tailored to your business workflows. No off-the-shelf compromise.",
+    features: [
+      "Custom web & mobile applications",
+      "Database management systems (DBMS)",
+      "Analytics portals & digital dashboards",
+      "Website hosting & maintenance",
+    ],
+    topBorderColor: "#0f2557",
+  },
+  {
+    icon: "🔄",
+    title: "IT Consultancy & Digital Transformation",
+    heading: "We guide your digital journey.",
+    description:
+      "Not sure where to start? We assess your current operations, identify the gaps, and build a practical roadmap to digitalise your business — step by step.",
+    features: [
+      "Digital transformation strategy",
+      "IT infrastructure management",
+      "Integrated digital solutions",
+      "Process automation & optimisation",
+    ],
+    topBorderColor: "#00c6d7",
+  },
+  {
+    icon: "🎓",
+    title: "Training & Skills Development",
+    heading: "We upskill your people.",
+    description:
+      "Technology is only as good as the people using it. We run hands-on training programs, workshops, and coaching sessions to build real capability in your team.",
+    features: [
+      "Enterprise system operator training",
+      "Workshops, seminars & coaching",
+      "Educational consultancy",
+      "In collaboration with Cyber9HUB @ Ayerspot",
+    ],
+    topBorderColor: "#00c6d7",
+  },
+]
+
+export default function ServicesSection() {
+  return (
+    <section id="services" className="py-24" style={{ background: "#f8faff" }}>
+      <div className="mx-auto max-w-[1160px] px-6">
+        {/* Eyebrow */}
+        <div className="mb-3">
+          <span className="font-body text-[12px] font-medium tracking-[0.12em] uppercase text-[#00c6d7]">
+            WHAT WE DO
+          </span>
+        </div>
+
+        {/* H2 */}
+        <h2
+          className="font-heading font-bold text-[#0f2557] mb-3"
+          style={{ fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.2, letterSpacing: "-0.02em" }}
+        >
+          Three pillars. One partner.
+        </h2>
+
+        <p className="font-body text-lg text-[#4a5578] leading-relaxed mb-12 max-w-[560px]">
+          From building your system to training your team — we cover the full digital
+          transformation journey.
+        </p>
+
+        {/* Service cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="card-hover bg-white rounded-2xl p-9 flex flex-col gap-5"
+              style={{
+                borderTop: `3px solid ${service.topBorderColor}`,
+                boxShadow: "0 2px 16px rgba(15,37,87,0.07)",
+              }}
+            >
+              {/* Icon */}
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
+                style={{ background: "rgba(15,37,87,0.06)" }}
+                aria-hidden="true"
+              >
+                {service.icon}
+              </div>
+
+              {/* Title & Heading */}
+              <div>
+                <p className="font-body font-medium text-[#8892a8] text-[12px] uppercase tracking-[0.08em] mb-1">
+                  {service.title}
+                </p>
+                <h3 className="font-heading font-bold text-[#0f2557] text-[20px] leading-snug">
+                  {service.heading}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <p className="font-body text-[#4a5578] text-base leading-relaxed">
+                {service.description}
+              </p>
+
+              {/* Features */}
+              <ul className="flex flex-col gap-2 mt-auto">
+                {service.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 font-body text-[15px] text-[#4a5578] leading-loose"
+                  >
+                    <span className="text-[#00c6d7] font-bold mt-0.5 shrink-0">→</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

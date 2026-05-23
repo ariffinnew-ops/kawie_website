@@ -5,7 +5,6 @@ import HeroSection from "@/components/hero-section"
 import CircuitBackground from "@/components/circuit-background"
 
 const ADMIN_PASSWORD = "kawie2026"
-const ADMIN_REDIRECT = "https://kawie-main.vercel.app"
 
 export default function Page() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -32,7 +31,8 @@ export default function Page() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (password === ADMIN_PASSWORD) {
-      window.location.href = ADMIN_REDIRECT
+      document.cookie = "kawie-auth=granted; path=/; max-age=86400"
+      window.location.href = "/home"
       return
     }
     setError("Incorrect password")
