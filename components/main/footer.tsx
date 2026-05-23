@@ -151,7 +151,7 @@ export default function Footer() {
             className="font-body text-[12px]"
             style={{ color: "rgba(255,255,255,0.25)" }}
           >
-            Powered by Next.js · Supabase · Vercel
+            Powered by Next.js
           </p>
         </div>
       </div>

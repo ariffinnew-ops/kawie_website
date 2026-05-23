@@ -131,7 +131,7 @@ export function Footer() {
             © 2026 Kawie Digital Solutions Sdn Bhd (202601019532). All rights reserved.
           </p>
           <p className="font-body text-[12px] text-white/25">
-            Powered by Next.js · Supabase · Vercel
+            Powered by Next.js
           </p>
         </div>
       </div>

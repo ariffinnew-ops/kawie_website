@@ -135,7 +135,6 @@ export default function HeroSection() {
             "SSM Registered (202601019532)",
             "PDPA-Ready",
             "Cloud-Native",
-            "Powered by Vercel & Supabase",
           ].map((item, i) => (
             <span key={item} className="flex items-center gap-2 font-body">
               {i > 0 && <span className="hidden sm:inline text-[#c8d0e0]">·</span>}
