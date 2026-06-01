@@ -49,12 +49,11 @@ export default function Navbar() {
         <div className="mx-auto max-w-[1160px] px-6 flex items-center justify-between h-16">
           <Link href="/home" className="flex items-center gap-3 group shrink-0">
             <Image
-              src="/kawie-logo.jpg"
+              src="/favicon.svg"
               alt="Kawie Digital Solutions logo"
-              width={120}
-              height={40}
-              className="h-[40px] w-auto rounded-md object-contain shrink-0"
-              style={{ height: 40, width: "auto" }}
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain shrink-0"
               priority
             />
             <span

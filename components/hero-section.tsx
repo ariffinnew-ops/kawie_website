@@ -22,11 +22,11 @@ export default function HeroSection({ onOpenAdmin }: HeroSectionProps) {
           aria-hidden="true"
         />
         <Image
-          src="/kawie-logo.jpg"
-          alt="Kawie Digital Solutions logo — neon K on circuit board"
-          width={200}
-          height={200}
-          className="relative h-[200px] w-[200px] rounded-2xl object-cover"
+          src="/favicon.svg"
+          alt="Kawie Digital Solutions logo"
+          width={240}
+          height={240}
+          className="relative h-[240px] w-[240px] object-contain"
           priority
         />
       </div>
