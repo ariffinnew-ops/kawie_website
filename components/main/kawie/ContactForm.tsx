@@ -82,6 +82,10 @@ export function ContactForm({ defaultService }: ContactFormProps) {
           you need to follow up, email{" "}
           <a href="mailto:admin@kawie-digital.com" className="text-[#00c6d7] font-medium">
             admin@kawie-digital.com
+          </a>{" "}
+          or{" "}
+          <a href="mailto:inquiry@kawie-digital.com" className="text-[#00c6d7] font-medium">
+            inquiry@kawie-digital.com
           </a>
           .
         </p>

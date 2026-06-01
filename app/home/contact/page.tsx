@@ -28,7 +28,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
       <main id="main-content" className="min-h-dvh bg-[#f8faff]">
         <section className="mx-auto max-w-[1160px] px-6 pt-24 pb-12">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#0f2557]/20 text-xs font-semibold tracking-widest text-[#0f2557] mb-6 font-heading">
+          <div className="section-eyebrow inline-flex items-center px-4 py-2 rounded-full border border-[#00c6d7]/30 bg-[#00c6d7]/5 text-[#0f2557] mb-6">
             GET IN TOUCH
           </div>
           <h1 className="font-heading font-extrabold text-5xl md:text-6xl text-[#0f2557] leading-none tracking-tight text-balance mb-4">

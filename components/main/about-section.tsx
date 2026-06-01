@@ -1,14 +1,15 @@
+import { GraduationCap, MapPin } from "lucide-react"
+
 const stats = [
-  { number: "5+", label: "Years combined experience in O&G & enterprise software" },
+  { number: "20+", label: "Years combined experience in O&G & enterprise software" },
   { number: "4", label: "Live UEOS platform modules" },
   { number: "10+", label: "Features on the UEOS roadmap" },
   { number: "3", label: "Integrated service pillars" },
 ]
 
 const badges = [
-  { icon: "🏢", text: "SSM: 202601019532 (1681629-X)" },
-  { icon: "📍", text: "Cyberjaya, Selangor" },
-  { icon: "🤝", text: "Training Centre — with Cyber9HUB @ Ayerspot" },
+  { icon: MapPin, text: "Cyberjaya, Selangor" },
+  { icon: GraduationCap, text: "Training Centre — with Cyber9HUB @ Ayerspot" },
 ]
 
 export default function AboutSection() {
@@ -18,7 +19,7 @@ export default function AboutSection() {
         {/* Eyebrow */}
         <div className="mb-3">
           <span
-            className="font-body text-[12px] font-medium tracking-[0.12em] uppercase text-[#00c6d7]"
+            className="section-eyebrow block"
           >
             WHO WE ARE
           </span>
@@ -51,16 +52,18 @@ export default function AboutSection() {
 
             {/* Badges */}
             <div className="flex flex-col gap-3">
-              {badges.map((badge) => (
+              {badges.map((badge) => {
+                const Icon = badge.icon
+                return (
                 <span
                   key={badge.text}
                   className="inline-flex items-center gap-3 font-body font-medium text-white text-[13px] px-4 py-2.5 rounded-full w-fit"
                   style={{ background: "#0f2557" }}
                 >
-                  <span>{badge.icon}</span>
+                  <Icon size={18} strokeWidth={2} className="shrink-0 text-[#00c6d7]" aria-hidden />
                   {badge.text}
                 </span>
-              ))}
+              )})}
             </div>
           </div>
 

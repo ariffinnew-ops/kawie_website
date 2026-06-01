@@ -1,7 +1,9 @@
 import Link from "next/link"
+import type { LucideIcon } from "lucide-react"
+import { Code2, GraduationCap, RefreshCcw } from "lucide-react"
 
 interface Service {
-  icon: string
+  icon: LucideIcon
   title: string
   heading: string
   description: string
@@ -12,7 +14,7 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: "💻",
+    icon: Code2,
     title: "Custom Software Development",
     heading: "We build what you need.",
     description:
@@ -27,7 +29,7 @@ const services: Service[] = [
     contactService: "Custom Software Development",
   },
   {
-    icon: "🔄",
+    icon: RefreshCcw,
     title: "IT Consultancy & Digital Transformation",
     heading: "We guide your digital journey.",
     description:
@@ -42,7 +44,7 @@ const services: Service[] = [
     contactService: "IT Consultancy & Digital Transformation",
   },
   {
-    icon: "🎓",
+    icon: GraduationCap,
     title: "Training & Skills Development",
     heading: "We upskill your people.",
     description:
@@ -64,7 +66,7 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-[1160px] px-6">
         {/* Eyebrow */}
         <div className="mb-3">
-          <span className="font-body text-[12px] font-medium tracking-[0.12em] uppercase text-[#00c6d7]">
+          <span className="section-eyebrow">
             WHAT WE DO
           </span>
         </div>
@@ -84,7 +86,9 @@ export default function ServicesSection() {
 
         {/* Service cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service) => (
+          {services.map((service) => {
+            const Icon = service.icon
+            return (
             <div
               key={service.title}
               className="card-hover bg-white rounded-2xl p-9 flex flex-col gap-5"
@@ -93,13 +97,16 @@ export default function ServicesSection() {
                 boxShadow: "0 2px 16px rgba(15,37,87,0.07)",
               }}
             >
-              {/* Icon */}
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center text-2xl"
-                style={{ background: "rgba(15,37,87,0.06)" }}
-                aria-hidden="true"
+                className="flex h-[56px] w-[56px] items-center justify-center rounded-2xl"
+                style={{
+                  background: "linear-gradient(145deg, #eef2ff 0%, #f0fafe 100%)",
+                  border: "1px solid rgba(15,37,87,0.08)",
+                  boxShadow: "0 4px 14px rgba(15,37,87,0.06)",
+                }}
+                aria-hidden
               >
-                {service.icon}
+                <Icon size={28} strokeWidth={1.75} className="text-[#0f2557]" />
               </div>
 
               {/* Title & Heading */}
@@ -137,7 +144,7 @@ export default function ServicesSection() {
                 Learn more →
               </Link>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </section>

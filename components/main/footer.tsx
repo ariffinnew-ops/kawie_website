@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { COMPANY_ADDRESS_LINES, COMPANY_EMAILS } from "@/lib/company-contact"
 
 const serviceLinks = [
   "Custom Software",
@@ -50,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading text-[13px] font-bold uppercase tracking-widest text-white mb-4">
+            <h4 className="font-heading text-[15px] font-bold uppercase tracking-[0.12em] text-white mb-4">
               Services
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -68,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading text-[13px] font-bold uppercase tracking-widest text-white mb-4">
+            <h4 className="font-heading text-[15px] font-bold uppercase tracking-[0.12em] text-white mb-4">
               Company
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -86,40 +87,28 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading text-[13px] font-bold uppercase tracking-widest text-white mb-4">
+            <h4 className="font-heading text-[15px] font-bold uppercase tracking-[0.12em] text-white mb-4">
               Connect
             </h4>
             <ul className="flex flex-col gap-2.5">
+              {COMPANY_EMAILS.map((email) => (
+                <li key={email}>
+                  <a
+                    href={`mailto:${email}`}
+                    className="font-body text-[15px] leading-[2.2] text-white/55 transition-colors hover:text-[#00c6d7] break-all"
+                  >
+                    {email}
+                  </a>
+                </li>
+              ))}
               <li>
-                <a
-                  href="mailto:admin@kawie-digital.com"
-                  className="font-body text-[15px] leading-[2.2] text-white/55 transition-colors hover:text-[#00c6d7]"
-                >
-                  admin@kawie-digital.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+601121734434"
-                  className="font-body text-[15px] leading-[2.2] text-white/55 transition-colors hover:text-[#00c6d7]"
-                >
-                  +6011-2173 4434
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-[15px] leading-[2.2] text-white/55 transition-colors hover:text-[#00c6d7]"
-                >
-                  WhatsApp Channel
-                </a>
-              </li>
-              <li>
-                <span className="font-body text-[15px] leading-[2.2] text-white/55">
-                  Cyber9HUB @ Ayerspot, Cyberjaya
-                </span>
+                <address className="not-italic font-body text-[15px] leading-[1.8] text-white/55">
+                  {COMPANY_ADDRESS_LINES.map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+                </address>
               </li>
             </ul>
           </div>

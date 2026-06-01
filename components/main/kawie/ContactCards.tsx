@@ -1,34 +1,23 @@
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import {
+  COMPANY_ADDRESS_LINES,
+  COMPANY_EMAIL_PRIMARY,
+  COMPANY_EMAIL_INQUIRY,
+} from "@/lib/company-contact"
 
 const contactCards = [
   {
     icon: Mail,
     title: "Email",
     description: "We reply within 24 hours on business days.",
-    value: "admin@kawie-digital.com",
-    href: "mailto:admin@kawie-digital.com",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    description: "Mon–Fri, 9:00 AM – 6:00 PM (MYT).",
-    value: "+6011-2173 4434",
-    href: "tel:+601121734434",
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp",
-    description: "Join our channel for updates and quick questions.",
-    value: "Kawie Digital Channel",
-    href: "https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v",
-    external: true,
+    emails: [COMPANY_EMAIL_PRIMARY, COMPANY_EMAIL_INQUIRY],
   },
   {
     icon: MapPin,
-    title: "Office",
-    description: "Authorised Training Centre with Cyber9HUB.",
-    value: "Cyber9HUB @ Ayerspot, Cyberjaya",
+    title: "Address",
+    description: "Authorised Training Centre with Cyber9HUB @ Ayerspot.",
+    addressLines: [...COMPANY_ADDRESS_LINES],
     href: null,
   },
 ]
@@ -54,25 +43,34 @@ export function ContactCards() {
             <p className="font-body text-sm text-[#4a5578] leading-relaxed mb-3">
               {card.description}
             </p>
-            <p
-              className={`font-body text-[15px] font-medium ${
-                card.href ? "text-[#00c6d7]" : "text-[#2d3748]"
-              }`}
-            >
-              {card.value}
-            </p>
+            {"emails" in card && card.emails ? (
+              <ul className="flex flex-col gap-2">
+                {card.emails.map((email) => (
+                  <li key={email}>
+                    <a
+                      href={`mailto:${email}`}
+                      className="font-body text-[15px] font-medium text-[#00c6d7] hover:text-[#0f2557] transition-colors break-all"
+                    >
+                      {email}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : "addressLines" in card && card.addressLines ? (
+              <address className="not-italic font-body text-[15px] font-medium text-[#2d3748] leading-relaxed">
+                {card.addressLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+            ) : null}
           </div>
         )
 
-        if (card.href) {
+        if ("href" in card && card.href) {
           return (
-            <Link
-              key={card.title}
-              href={card.href}
-              target={card.external ? "_blank" : undefined}
-              rel={card.external ? "noopener noreferrer" : undefined}
-              className="block"
-            >
+            <Link key={card.title} href={card.href} className="block">
               {content}
             </Link>
           )

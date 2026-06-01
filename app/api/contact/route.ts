@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
+import { COMPANY_EMAIL_PRIMARY, COMPANY_EMAIL_INQUIRY } from '@/lib/company-contact'
 
 const contactSchema = z.object({
   name: z.string().min(1).max(120),
@@ -41,12 +42,16 @@ export async function POST(request: Request) {
   if (!apiKey) {
     console.error('[contact] RESEND_API_KEY is not configured')
     return NextResponse.json(
-      { error: 'Contact form is temporarily unavailable. Please email admin@kawie-digital.com directly.' },
+      {
+        error: `Contact form is temporarily unavailable. Please email ${COMPANY_EMAIL_PRIMARY} or ${COMPANY_EMAIL_INQUIRY} directly.`,
+      },
       { status: 503 }
     )
   }
 
-  const to = process.env.CONTACT_TO_EMAIL ?? 'admin@kawie-digital.com'
+  const to = process.env.CONTACT_TO_EMAIL
+    ? process.env.CONTACT_TO_EMAIL.split(',').map((e) => e.trim())
+    : [COMPANY_EMAIL_PRIMARY, COMPANY_EMAIL_INQUIRY]
   const from = process.env.CONTACT_FROM_EMAIL ?? 'Kawie Digital <onboarding@resend.dev>'
 
   const res = await fetch('https://api.resend.com/emails', {
@@ -67,7 +72,9 @@ export async function POST(request: Request) {
   if (!res.ok) {
     console.error('[contact] Resend error:', res.status, await res.text())
     return NextResponse.json(
-      { error: 'We could not send your message. Please try again or email admin@kawie-digital.com.' },
+      {
+        error: `We could not send your message. Please try again or email ${COMPANY_EMAIL_PRIMARY} or ${COMPANY_EMAIL_INQUIRY}.`,
+      },
       { status: 502 }
     )
   }

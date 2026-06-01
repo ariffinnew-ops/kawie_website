@@ -85,6 +85,16 @@
   font-family: var(--font-inter), 'Inter', sans-serif;
 }
 
+.section-eyebrow {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #00c6d7;
+  line-height: 1.35;
+}
+
 @keyframes fade-in-up {
   from {
     opacity: 0;

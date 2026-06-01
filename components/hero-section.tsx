@@ -72,20 +72,32 @@ export default function HeroSection({ onOpenAdmin }: HeroSectionProps) {
       <div className="flex w-full flex-col items-center gap-2 font-sans">
         <CountdownTimer large />
 
-        <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-4">
+        <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground">
           <span
             className="rounded-md border px-3 py-1 text-sm font-medium uppercase tracking-[0.15em]"
             style={{ borderColor: "var(--border-bright)", color: "var(--primary-dim)" }}
           >
             Get in touch
           </span>
-          <a
-            href="mailto:admin@kawie-digital.com"
-            className="text-sm font-normal transition-colors hover:text-foreground"
-            style={{ color: "var(--foreground)" }}
-          >
-            admin@kawie-digital.com
-          </a>
+          <div className="flex flex-col items-center gap-1 sm:flex-row sm:gap-4">
+            <a
+              href="mailto:admin@kawie-digital.com"
+              className="text-sm font-normal transition-colors hover:text-foreground"
+              style={{ color: "var(--foreground)" }}
+            >
+              admin@kawie-digital.com
+            </a>
+            <span className="hidden sm:inline text-muted-foreground" aria-hidden>
+              ·
+            </span>
+            <a
+              href="mailto:inquiry@kawie-digital.com"
+              className="text-sm font-normal transition-colors hover:text-foreground"
+              style={{ color: "var(--foreground)" }}
+            >
+              inquiry@kawie-digital.com
+            </a>
+          </div>
         </div>
       </div>
 

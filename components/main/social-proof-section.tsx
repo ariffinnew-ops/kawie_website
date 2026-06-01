@@ -33,7 +33,7 @@ export default function SocialProofSection() {
     <section className="py-24" style={{ background: "#ffffff" }}>
       <div className="mx-auto max-w-[1160px] px-6">
         <div className="mb-3">
-          <span className="font-body text-[12px] font-medium tracking-[0.12em] uppercase text-[#00c6d7]">
+          <span className="section-eyebrow">
             TRUSTED BY TEAMS
           </span>
         </div>

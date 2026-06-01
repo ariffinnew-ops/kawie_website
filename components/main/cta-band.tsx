@@ -35,24 +35,13 @@ export default function CtaBand() {
           how we can help.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/home/contact"
-            className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-8 py-3.5 rounded-lg"
-            style={{ background: "#00c6d7", color: "#0f1f3d" }}
-          >
-            Talk to Us →
-          </Link>
-          <Link
-            href="https://whatsapp.com/channel/0029Vb76GGKQuJCSZQvax3v"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-8 py-3.5 rounded-lg text-white"
-            style={{ border: "2px solid rgba(255,255,255,0.4)" }}
-          >
-            Join WhatsApp Channel
-          </Link>
-        </div>
+        <Link
+          href="/home/contact"
+          className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-8 py-3.5 rounded-lg"
+          style={{ background: "#00c6d7", color: "#0f1f3d" }}
+        >
+          Talk to Us →
+        </Link>
       </div>
     </section>
   )
