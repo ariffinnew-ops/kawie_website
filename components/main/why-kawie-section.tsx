@@ -42,7 +42,7 @@ export default function WhyKawieSection() {
           style={{ fontSize: "clamp(32px, 4vw, 48px)", lineHeight: 1.2, letterSpacing: "-0.02em", maxWidth: "600px" }}
         >
           We don&apos;t just deliver software.{" "}
-          <span className="text-[#00c6d7]">We deliver outcomes.</span>
+          <span className="text-[#00c6d7]">We partner for the long run.</span>
         </h2>
 
         {/* Cards grid */}

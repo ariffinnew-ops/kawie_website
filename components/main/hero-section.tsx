@@ -97,16 +97,9 @@ export default function HeroSection() {
         </h1>
 
         {/* Subheading */}
-        <p className="font-body font-normal text-lg text-[#4a5578] leading-relaxed mx-auto mb-4 max-w-[640px] animate-fade-in-delay-2">
-          Your trusted digital partner — from custom software to enterprise platforms to
-          hands-on workforce training.
-        </p>
-
-        {/* Description */}
-        <p className="font-body font-light text-lg text-[#4a5578] leading-relaxed mx-auto mb-10 max-w-[600px] animate-fade-in-delay-2">
-          Kawie Digital Solutions helps businesses digitalise their operations, upskill their
-          teams, and scale with confidence. We don&apos;t just deliver technology — we deliver
-          outcomes.
+        <p className="font-body font-normal text-lg text-[#4a5578] leading-relaxed mx-auto mb-10 max-w-[640px] animate-fade-in-delay-2">
+          Your trusted digital partner for custom software, enterprise platforms, and hands-on
+          workforce training — Cyberjaya-based, SSM-registered, and built for Malaysian industry.
         </p>
 
         {/* CTAs */}

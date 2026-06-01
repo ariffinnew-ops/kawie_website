@@ -10,28 +10,56 @@ const serviceOptions = [
   "General Enquiry",
 ]
 
-export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
+type ContactFormProps = {
+  defaultService?: string
+}
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+export function ContactForm({ defaultService }: ContactFormProps) {
+  const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState("")
+
+  const initialService =
+    defaultService && serviceOptions.includes(defaultService) ? defaultService : ""
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setSubmitting(true)
+    setError("")
+
     const form = e.currentTarget
     const data = new FormData(form)
 
-    const name = String(data.get("name") ?? "")
-    const email = String(data.get("email") ?? "")
-    const company = String(data.get("company") ?? "")
-    const phone = String(data.get("phone") ?? "")
-    const service = String(data.get("service") ?? "")
-    const message = String(data.get("message") ?? "")
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      company: String(data.get("company") ?? "") || undefined,
+      phone: String(data.get("phone") ?? "") || undefined,
+      service: String(data.get("service") ?? ""),
+      message: String(data.get("message") ?? ""),
+    }
 
-    const subject = encodeURIComponent(`Kawie Digital enquiry — ${service}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`
-    )
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
 
-    window.location.href = `mailto:admin@kawie-digital.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+      const result = (await res.json()) as { error?: string; success?: boolean }
+
+      if (!res.ok) {
+        setError(result.error ?? "Something went wrong. Please try again.")
+        return
+      }
+
+      setSubmitted(true)
+      form.reset()
+    } catch {
+      setError("Network error. Please check your connection or email us directly.")
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const inputClass =
@@ -50,7 +78,8 @@ export function ContactForm() {
 
       {submitted ? (
         <p className="font-body text-[15px] text-[#0f2557] rounded-xl bg-[#f0f4ff] border border-[rgba(15,37,87,0.08)] px-4 py-3">
-          Your email client should open shortly. If it didn&apos;t, email us at{" "}
+          Thank you — your message has been sent. We&apos;ll get back to you within 24 hours. If
+          you need to follow up, email{" "}
           <a href="mailto:admin@kawie-digital.com" className="text-[#00c6d7] font-medium">
             admin@kawie-digital.com
           </a>
@@ -58,6 +87,12 @@ export function ContactForm() {
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          {error && (
+            <p className="font-body text-sm text-red-600 rounded-xl bg-red-50 border border-red-100 px-4 py-3" role="alert">
+              {error}
+            </p>
+          )}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label htmlFor="name" className={labelClass}>
@@ -118,7 +153,13 @@ export function ContactForm() {
             <label htmlFor="service" className={labelClass}>
               I&apos;m interested in *
             </label>
-            <select id="service" name="service" required className={inputClass} defaultValue="">
+            <select
+              id="service"
+              name="service"
+              required
+              className={inputClass}
+              defaultValue={initialService}
+            >
               <option value="" disabled>
                 Select a service
               </option>
@@ -146,9 +187,10 @@ export function ContactForm() {
 
           <button
             type="submit"
-            className="btn-hover inline-flex items-center justify-center rounded-xl bg-[#0f2557] px-8 py-3.5 font-body text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
+            disabled={submitting}
+            className="btn-hover inline-flex items-center justify-center rounded-xl bg-[#0f2557] px-8 py-3.5 font-body text-[15px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
           >
-            Send Message →
+            {submitting ? "Sending…" : "Send Message →"}
           </button>
         </form>
       )}

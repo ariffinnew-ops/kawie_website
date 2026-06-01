@@ -89,15 +89,24 @@ export default function ProductSection() {
                 and built to scale across every industry.
               </p>
 
-              <Link
-                href="https://ueos.kawie-digital.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-7 py-3 rounded-lg w-fit"
-                style={{ background: "#00c6d7", color: "#0f1f3d" }}
-              >
-                Explore UEOS →
-              </Link>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="https://ueos.kawie-digital.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-7 py-3 rounded-lg w-fit"
+                  style={{ background: "#00c6d7", color: "#0f1f3d" }}
+                >
+                  Explore UEOS →
+                </Link>
+                <Link
+                  href="/home/contact?service=UEOS%20Platform%20Demo"
+                  className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-7 py-3 rounded-lg w-fit text-white"
+                  style={{ border: "2px solid rgba(255,255,255,0.35)" }}
+                >
+                  Book a Demo
+                </Link>
+              </div>
             </div>
 
             {/* Right — module grid */}

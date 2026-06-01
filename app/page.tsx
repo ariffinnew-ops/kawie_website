@@ -42,8 +42,7 @@ export default function Page() {
 
   return (
     <main
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background"
-      style={{ height: "100vh" }}
+      className="relative flex min-h-dvh w-full flex-col items-center justify-center overflow-hidden bg-background"
     >
       <CircuitBackground />
       <HeroSection onOpenAdmin={() => setModalOpen(true)} />

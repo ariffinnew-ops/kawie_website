@@ -3,7 +3,7 @@ const industries = [
     icon: "🛢️",
     title: "Oil & Gas",
     description:
-      "PETRONAS-ready. Offshore compliance, crew management, and procurement automation.",
+      "Built for offshore compliance workflows, crew management, and procurement automation.",
   },
   {
     icon: "🏗️",
@@ -39,7 +39,7 @@ const industries = [
 
 export default function IndustriesSection() {
   return (
-    <section id="training" className="py-24" style={{ background: "#ffffff" }}>
+    <section id="industries" className="py-24" style={{ background: "#ffffff" }}>
       <div className="mx-auto max-w-[1160px] px-6">
         {/* Eyebrow */}
         <div className="mb-3">

@@ -15,8 +15,9 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
-  title: 'Kawie Digital Solution Sdn Bhd — Coming Soon',
-  description: 'Kawie Digital Solution Sdn Bhd is building something powerful. Our website is under construction. Stay tuned.',
+  title: 'Kawie Digital Solutions Sdn Bhd — Coming Soon',
+  description:
+    'Kawie Digital Solutions Sdn Bhd is building something powerful. Our website is under construction. Stay tuned.',
 }
 
 export default function RootLayout({

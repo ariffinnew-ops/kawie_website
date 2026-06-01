@@ -33,6 +33,8 @@
 
 @theme inline {
   --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-heading: var(--font-barlow), 'Barlow', sans-serif;
+  --font-body: var(--font-inter), 'Inter', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -67,8 +69,106 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html,
-  body {
-    @apply bg-background text-foreground overflow-hidden h-dvh;
+  html {
+    @apply bg-background text-foreground scroll-smooth;
   }
+  body {
+    @apply bg-background text-foreground min-h-dvh;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-barlow), 'Barlow', sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-a {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-fade-in-delay-1 {
+  animation: fade-in-up 0.6s ease-out 0.1s both;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in-up 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-in-delay-3 {
+  animation: fade-in-up 0.6s ease-out 0.3s both;
+}
+
+.float-a {
+  animation: float-a 6s ease-in-out infinite;
+}
+
+.float-b {
+  animation: float-b 7s ease-in-out infinite;
+}
+
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+.btn-hover {
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-hover:hover {
+  transform: translateY(-1px);
+}
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #0f2557;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0.5rem;
+}
+
+.skip-to-content:focus {
+  left: 1rem;
+  top: 1rem;
 }

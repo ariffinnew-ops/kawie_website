@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 interface Service {
   icon: string
   title: string
@@ -5,6 +7,7 @@ interface Service {
   description: string
   features: string[]
   topBorderColor: string
+  contactService: string
 }
 
 const services: Service[] = [
@@ -21,6 +24,7 @@ const services: Service[] = [
       "Website hosting & maintenance",
     ],
     topBorderColor: "#0f2557",
+    contactService: "Custom Software Development",
   },
   {
     icon: "🔄",
@@ -35,6 +39,7 @@ const services: Service[] = [
       "Process automation & optimisation",
     ],
     topBorderColor: "#00c6d7",
+    contactService: "IT Consultancy & Digital Transformation",
   },
   {
     icon: "🎓",
@@ -49,6 +54,7 @@ const services: Service[] = [
       "In collaboration with Cyber9HUB @ Ayerspot",
     ],
     topBorderColor: "#00c6d7",
+    contactService: "Training & Skills Development",
   },
 ]
 
@@ -123,6 +129,13 @@ export default function ServicesSection() {
                   </li>
                 ))}
               </ul>
+
+              <Link
+                href={`/home/contact?service=${encodeURIComponent(service.contactService)}`}
+                className="font-body text-[14px] font-medium text-[#00c6d7] hover:text-[#0f2557] transition-colors mt-2"
+              >
+                Learn more →
+              </Link>
             </div>
           ))}
         </div>

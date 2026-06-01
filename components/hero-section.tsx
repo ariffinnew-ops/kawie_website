@@ -23,7 +23,7 @@ export default function HeroSection({ onOpenAdmin }: HeroSectionProps) {
         />
         <Image
           src="/kawie-logo.jpg"
-          alt="Kawie Digital Solution logo — neon K on circuit board"
+          alt="Kawie Digital Solutions logo — neon K on circuit board"
           width={200}
           height={200}
           className="relative h-[200px] w-[200px] rounded-2xl object-cover"

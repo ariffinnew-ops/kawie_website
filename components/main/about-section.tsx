@@ -1,8 +1,8 @@
 const stats = [
-  { number: "5+", label: "Years Combined Experience" },
-  { number: "4", label: "Core Platform Modules" },
-  { number: "10+", label: "Upcoming Platform Features" },
-  { number: "3", label: "Service Pillars" },
+  { number: "5+", label: "Years combined experience in O&G & enterprise software" },
+  { number: "4", label: "Live UEOS platform modules" },
+  { number: "10+", label: "Features on the UEOS roadmap" },
+  { number: "3", label: "Integrated service pillars" },
 ]
 
 const badges = [
