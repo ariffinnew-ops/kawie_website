@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'Kawie Digital Solutions Sdn Bhd — Coming Soon',
   description:
     'Kawie Digital Solutions Sdn Bhd is building something powerful. Our website is under construction. Stay tuned.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
