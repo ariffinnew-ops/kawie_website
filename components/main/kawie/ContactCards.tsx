@@ -16,7 +16,7 @@ const contactCards = [
   {
     icon: MapPin,
     title: "Address",
-    description: "Authorised Training Centre with Cyber9HUB @ Ayerspot.",
+    description: "Authorised Training Centre with Purple-Ayerspot@Cyber9HUB Training Space.",
     addressLines: [...COMPANY_ADDRESS_LINES],
     href: null,
   },

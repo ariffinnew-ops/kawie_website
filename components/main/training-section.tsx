@@ -78,7 +78,7 @@ export default function TrainingSection() {
 
         <p className="font-body text-lg text-[#4a5578] leading-relaxed mb-4 max-w-[720px]">
           Technology only works when your team knows how to use it. We run practical training
-          programmes in collaboration with Cyber9HUB @ Ayerspot, Cyberjaya — including our
+          programmes in collaboration with Purple-Ayerspot@Cyber9HUB Training Space — including our
           flagship{" "}
           <strong className="font-medium text-[#0f2557]">UEOS-APOG</strong> integrated framework
           application.
@@ -221,7 +221,7 @@ export default function TrainingSection() {
                     Authorised training centre
                   </p>
                   <h3 className="font-heading font-bold text-white text-[20px] md:text-[22px] leading-snug">
-                    Cyber9HUB @ Ayerspot, Cyberjaya
+                    Purple-Ayerspot@Cyber9HUB Training Space
                   </h3>
                 </div>
               </div>

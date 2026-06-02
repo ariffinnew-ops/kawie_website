@@ -53,7 +53,7 @@ const services: Service[] = [
       "Enterprise system operator training",
       "Workshops, seminars & coaching",
       "Educational consultancy",
-      "In collaboration with Cyber9HUB @ Ayerspot",
+      "In collaboration with Purple-Ayerspot@Cyber9HUB Training Space",
     ],
     topBorderColor: "#00c6d7",
     contactService: "Training & Skills Development",

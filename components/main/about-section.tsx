@@ -9,7 +9,7 @@ const stats = [
 
 const badges = [
   { icon: MapPin, text: "Cyberjaya, Selangor" },
-  { icon: GraduationCap, text: "Training Centre — with Cyber9HUB @ Ayerspot" },
+  { icon: GraduationCap, text: "Training Centre — with Purple-Ayerspot@Cyber9HUB Training Space" },
 ]
 
 export default function AboutSection() {

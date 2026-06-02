@@ -47,7 +47,7 @@ export default function Footer() {
                 Authorised Training Centre
               </p>
               <p className="font-body text-[14px] text-white/70 leading-snug">
-                Cyber9HUB @ Ayerspot
+                Purple-Ayerspot@Cyber9HUB Training Space
               </p>
               <Image
                 src="/ayerspot%20logo.png"
