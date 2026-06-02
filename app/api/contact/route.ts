@@ -53,7 +53,7 @@ export async function POST(request: Request) {
   const to = process.env.CONTACT_TO_EMAIL
     ? process.env.CONTACT_TO_EMAIL.split(',').map((e) => e.trim())
     : [COMPANY_EMAIL_PRIMARY, COMPANY_EMAIL_INQUIRY]
-  const from = process.env.CONTACT_FROM_EMAIL ?? 'Kawie Digital <onboarding@resend.dev>'
+  const from = process.env.CONTACT_FROM_EMAIL ?? 'Kawie Digital <noreply@kawie-digital.com>'
 
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
