@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { COMPANY_EMAIL_PRIMARY, COMPANY_EMAIL_INQUIRY } from '@/lib/company-contact'
+import { supabaseAdmin } from '@/lib/supabase'
 
 const contactSchema = z.object({
   name: z.string().min(1).max(120),
@@ -77,6 +78,28 @@ export async function POST(request: Request) {
       },
       { status: 502 }
     )
+  }
+
+  try {
+    const { error: dbError } = await supabaseAdmin
+      .schema('billing_reports')
+      .from('inquiries')
+      .insert({
+        name,
+        email,
+        company: company ?? null,
+        phone: phone ?? null,
+        service,
+        message,
+        status: 'new',
+        source: 'website',
+      })
+
+    if (dbError) {
+      console.error('[contact] Supabase insert failed:', dbError.message)
+    }
+  } catch (err) {
+    console.error('[contact] Supabase unexpected error:', err)
   }
 
   return NextResponse.json({ success: true })
