@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to,
       reply_to: email,
       subject: `Kawie Digital enquiry — ${service}`,
       text,
