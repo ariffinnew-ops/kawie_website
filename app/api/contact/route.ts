@@ -82,7 +82,7 @@ export async function POST(request: Request) {
 
   try {
     const { error: dbError } = await supabaseAdmin
-      .schema('billing_reports')
+      .schema('my_dashboard')
       .from('inquiries')
       .insert({
         name,
