@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Barlow } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ViewTracker } from '@/components/view-tracker'
 import './globals.css'
 
 const inter = Inter({
@@ -37,6 +38,7 @@ export default function RootLayout({
     <html lang="en" className="bg-background">
       <body className={`${inter.variable} ${barlow.variable} font-sans antialiased`}>
         {children}
+        <ViewTracker />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
