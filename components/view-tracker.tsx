@@ -8,12 +8,16 @@ export function ViewTracker() {
   const lastTrackedPath = useRef<string | null>(null)
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development' || !pathname || lastTrackedPath.current === pathname) {
+    if (process.env.NODE_ENV !== 'production' || !pathname || lastTrackedPath.current === pathname) {
       return
     }
 
     lastTrackedPath.current = pathname
-    navigator.sendBeacon('/api/track-view', JSON.stringify({ path: pathname }))
+    try {
+      navigator.sendBeacon('/api/track-view', JSON.stringify({ path: pathname }))
+    } catch {
+      // Tracking should never affect the user's navigation.
+    }
   }, [pathname])
 
   return null
