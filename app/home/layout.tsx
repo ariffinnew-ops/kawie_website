@@ -5,8 +5,11 @@ export const metadata: Metadata = {
   description:
     'Cyberjaya-based technology partner for custom software, enterprise platforms, UEOS, and hands-on workforce training. SSM-registered. PDPA-aware.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/home',
   },
   openGraph: {
     title: 'Kawie Digital Solutions Sdn Bhd',

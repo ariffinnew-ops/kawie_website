@@ -16,9 +16,13 @@ const barlow = Barlow({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.kawie-digital.com'),
   title: 'Kawie Digital Solutions Sdn Bhd — Coming Soon',
   description:
     'Kawie Digital Solutions Sdn Bhd is building something powerful. Our website is under construction. Stay tuned.',
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
