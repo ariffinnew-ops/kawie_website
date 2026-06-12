@@ -10,11 +10,11 @@ const serviceLinks = [
 ]
 
 const companyLinks = [
-  { label: "About Us", href: "/home#about" },
-  { label: "Our Product — UEOS", href: "/home#product" },
-  { label: "Training — UEOS-APOG", href: "/home#training" },
-  { label: "Industries We Serve", href: "/home#industries" },
-  { label: "Contact Us", href: "/home/contact" },
+  { label: "About Us", href: "/#about" },
+  { label: "Our Product — UEOS", href: "/#product" },
+  { label: "Training — UEOS-APOG", href: "/#training" },
+  { label: "Industries We Serve", href: "/#industries" },
+  { label: "Contact Us", href: "/contact" },
 ]
 
 export default function Footer() {
@@ -67,7 +67,7 @@ export default function Footer() {
               {serviceLinks.map((item) => (
                 <li key={item}>
                   <Link
-                    href="/home#services"
+                    href="/#services"
                     className="font-body text-[15px] leading-snug text-white/55 transition-colors hover:text-[#00c6d7]"
                   >
                     {item}

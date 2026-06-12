@@ -138,7 +138,7 @@ export default function ServicesSection() {
               </ul>
 
               <Link
-                href={`/home/contact?service=${encodeURIComponent(service.contactService)}`}
+                href={`/contact?service=${encodeURIComponent(service.contactService)}`}
                 className="font-body text-[14px] font-medium text-[#00c6d7] hover:text-[#0f2557] transition-colors mt-2"
               >
                 Learn more →

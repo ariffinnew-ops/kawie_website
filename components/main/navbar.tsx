@@ -6,11 +6,11 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "About", href: "/home#about" },
-  { label: "Services", href: "/home#services" },
-  { label: "Product", href: "/home#product" },
-  { label: "Training", href: "/home#training" },
-  { label: "Contact", href: "/home/contact" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Product", href: "/#product" },
+  { label: "Training", href: "/#training" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
         }}
       >
         <div className="mx-auto max-w-[1160px] px-6 flex items-center justify-between h-16">
-          <Link href="/home" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center gap-3 group shrink-0">
             <Image
               src="/favicon.svg"
               alt="Kawie Digital Solutions logo"
@@ -78,7 +78,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-3">
             <Link
-              href="/home/contact"
+              href="/contact"
               className="hidden md:inline-flex items-center btn-hover bg-[#0f2557] text-white font-body font-medium text-[14px] px-5 py-2 rounded-lg hover:opacity-90 transition-all duration-200"
             >
               Talk to Us
@@ -108,7 +108,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/home/contact"
+              href="/contact"
               className="inline-flex items-center justify-center bg-[#0f2557] text-white font-body font-medium text-[14px] px-5 py-2.5 rounded-lg mt-2"
               onClick={() => setMenuOpen(false)}
             >

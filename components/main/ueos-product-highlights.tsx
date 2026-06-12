@@ -96,7 +96,7 @@ export default function UeosProductHighlights() {
           Explore UEOS →
         </Link>
         <Link
-          href="/home/contact?service=UEOS%20Platform%20Demo"
+          href="/contact?service=UEOS%20Platform%20Demo"
           className="btn-hover inline-flex items-center justify-center font-body font-medium text-[14px] px-5 py-2.5 rounded-lg text-[#0f2557]"
           style={{ border: "1px solid rgba(15,37,87,0.2)" }}
         >

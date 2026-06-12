@@ -296,7 +296,7 @@ export default function TrainingSection() {
 
               <div className="flex flex-wrap gap-3 pt-1">
                 <Link
-                  href="/home/contact?service=Training+%26+Skills+Development"
+                  href="/contact?service=Training+%26+Skills+Development"
                   className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-7 py-3 rounded-lg"
                   style={{ background: "#00c6d7", color: "#0f1f3d" }}
                 >

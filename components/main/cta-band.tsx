@@ -36,7 +36,7 @@ export default function CtaBand() {
         </p>
 
         <Link
-          href="/home/contact"
+          href="/contact"
           className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium text-[15px] px-8 py-3.5 rounded-lg"
           style={{ background: "#00c6d7", color: "#0f1f3d" }}
         >

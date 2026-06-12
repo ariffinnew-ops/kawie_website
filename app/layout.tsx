@@ -17,9 +17,9 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.kawie-digital.com'),
-  title: 'Kawie Digital Solutions Sdn Bhd — Coming Soon',
+  title: 'Kawie Digital Solutions Sdn Bhd — Custom Software, UEOS & Training',
   description:
-    'Kawie Digital Solutions Sdn Bhd is building something powerful. Our website is under construction. Stay tuned.',
+    'Cyberjaya-based technology partner for custom software, enterprise platforms, UEOS, and hands-on workforce training.',
   alternates: {
     canonical: '/',
   },

@@ -105,13 +105,13 @@ export default function HeroSection() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in-delay-3">
           <Link
-            href="/home/contact"
+            href="/contact"
             className="btn-hover inline-flex items-center justify-center gap-2 bg-[#0f2557] text-white font-body font-medium px-8 py-3.5 rounded-lg text-[15px]"
           >
             Talk to Us →
           </Link>
           <Link
-            href="/home#services"
+            href="/#services"
             className="btn-hover inline-flex items-center justify-center gap-2 font-body font-medium px-8 py-3.5 rounded-lg text-[15px] text-[#0f2557]"
             style={{ border: "2px solid #0f2557" }}
           >

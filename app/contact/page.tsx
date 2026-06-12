@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: '/home/contact',
+    canonical: '/contact',
   },
 }
 
@@ -66,7 +66,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               </p>
             </div>
             <Link
-              href="/home"
+              href="/"
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#00c6d7] text-[#0f1f3d] font-semibold text-sm font-body hover:bg-[#00b0bf] transition-colors"
             >
               Back to Home
