@@ -10,8 +10,11 @@ export const metadata: Metadata = {
   description:
     'Book a demo, request a proposal, or ask about our services. We will get back to you within 24 hours.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/home/contact',
   },
 }
 
