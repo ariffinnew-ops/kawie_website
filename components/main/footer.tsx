@@ -7,7 +7,7 @@ import { APP_VERSION } from "@/lib/version"
 const platformLinks = [
   { label: "UEOS Core Platform", href: "/#ueos" },
   { label: "Construction PM", href: "/#flagship" },
-  { label: `Ecosystem — ${TOTAL_APP_COUNT} apps`, href: "/#ecosystem" },
+  { label: `Ecosystem — ${TOTAL_APP_COUNT} apps`, href: "/ecosystem" },
 ]
 
 const companyLinks = [

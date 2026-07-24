@@ -9,7 +9,7 @@ const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
   { label: "UEOS Platform", href: "/#ueos" },
-  { label: "Ecosystem", href: "/#ecosystem" },
+  { label: "Ecosystem", href: "/ecosystem" },
   { label: "Training", href: "/#training" },
   { label: "Contact", href: "/contact" },
 ]
