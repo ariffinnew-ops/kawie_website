@@ -8,7 +8,8 @@ import { Menu, X } from "lucide-react"
 const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
-  { label: "Product", href: "/#product" },
+  { label: "UEOS Platform", href: "/#ueos" },
+  { label: "Ecosystem", href: "/#ecosystem" },
   { label: "Training", href: "/#training" },
   { label: "Contact", href: "/contact" },
 ]
@@ -37,86 +38,83 @@ export default function Navbar() {
         Skip to main content
       </a>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 border-b border-border bg-[rgba(246,248,249,0.85)] backdrop-blur-[14px] transition-shadow duration-300 ${
           scrolled ? "shadow-md" : ""
         }`}
-        style={{
-          background: "rgba(248,250,255,0.95)",
-          backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(15,37,87,0.08)",
-        }}
       >
-        <div className="mx-auto max-w-[1160px] px-6 flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+        <div className="mx-auto flex h-14 max-w-[1180px] items-center justify-between px-6">
+          <Link href="/" className="group flex shrink-0 items-center gap-2.5">
             <Image
-              src="/favicon.svg"
+              src="/kawie-logo.png"
               alt="Kawie Digital Solutions logo"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain shrink-0"
+              width={36}
+              height={36}
+              className="h-9 w-9 shrink-0 rounded-md object-contain"
               priority
             />
-            <span
-              className="font-heading font-bold text-[#0f2557] text-[15px] leading-tight hidden sm:block"
-              style={{ letterSpacing: "-0.01em" }}
-            >
-              Kawie Digital Solutions
+            <span className="hidden font-heading text-[15px] font-bold lowercase leading-tight text-foreground sm:block">
+              kawie <span className="text-primary-dim">digital</span>
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="font-body text-[14px] font-medium text-[#0f2557] hover:text-[#00c6d7] transition-colors duration-200"
+                className="font-body text-[13.5px] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </Link>
             ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center btn-hover bg-[#0f2557] text-white font-body font-medium text-[14px] px-5 py-2 rounded-lg hover:opacity-90 transition-all duration-200"
+              className="btn-hover inline-flex items-center rounded-lg bg-primary px-4 py-2 text-[13.5px] font-semibold text-primary-foreground hover:shadow-[0_8px_24px_-8px_rgba(14,158,134,0.5)]"
             >
               Talk to Us
             </Link>
-            <button
-              type="button"
-              className="md:hidden p-2 text-[#0f2557]"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? <X size={22} /> : <Menu size={22} />}
-            </button>
-          </div>
+          </nav>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className="grid h-9 w-9 place-items-center rounded-lg text-foreground md:hidden"
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden bg-white border-t border-[rgba(15,37,87,0.08)] px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
+          <nav
+            className="border-t border-border bg-background px-6 pb-6 pt-3 md:hidden"
+            aria-label="Mobile navigation"
+          >
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-lg px-3 py-3 font-body text-[15px] text-foreground hover:bg-secondary"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <Link
-                key={link.label}
-                href={link.href}
-                className="font-body text-[15px] font-medium text-[#0f2557] hover:text-[#00c6d7] transition-colors"
+                href="/contact"
                 onClick={() => setMenuOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-[15px] font-semibold text-primary-foreground"
               >
-                {link.label}
+                Talk to Us
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-[#0f2557] text-white font-body font-medium text-[14px] px-5 py-2.5 rounded-lg mt-2"
-              onClick={() => setMenuOpen(false)}
-            >
-              Talk to Us
-            </Link>
-          </div>
+            </div>
+          </nav>
         )}
       </header>
+      {/* spacer for fixed header */}
+      <div className="h-14" aria-hidden />
     </>
   )
 }

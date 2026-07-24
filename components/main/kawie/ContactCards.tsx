@@ -28,19 +28,12 @@ export function ContactCards() {
       {contactCards.map((card) => {
         const Icon = card.icon
         const content = (
-          <div
-            className="rounded-2xl border border-[rgba(15,37,87,0.08)] bg-white p-6 shadow-sm transition-shadow hover:shadow-md h-full"
-          >
-            <div
-              className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-[#0f2557]"
-              style={{ background: "#eef2ff" }}
-            >
+          <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[rgba(14,158,134,0.08)] text-primary-dim">
               <Icon size={20} strokeWidth={2} aria-hidden />
             </div>
-            <h3 className="font-heading text-base font-bold text-[#0f2557] mb-1">
-              {card.title}
-            </h3>
-            <p className="font-body text-sm text-[#4a5578] leading-relaxed mb-3">
+            <h3 className="mb-1 font-heading text-base font-bold text-foreground">{card.title}</h3>
+            <p className="mb-3 font-body text-sm leading-relaxed text-muted-foreground">
               {card.description}
             </p>
             {"emails" in card && card.emails ? (
@@ -49,7 +42,7 @@ export function ContactCards() {
                   <li key={email}>
                     <a
                       href={`mailto:${email}`}
-                      className="font-body text-[15px] font-medium text-[#00c6d7] hover:text-[#0f2557] transition-colors break-all"
+                      className="break-all font-body text-[15px] font-medium text-primary-dim transition-colors hover:text-foreground"
                     >
                       {email}
                     </a>
@@ -57,7 +50,7 @@ export function ContactCards() {
                 ))}
               </ul>
             ) : "addressLines" in card && card.addressLines ? (
-              <address className="not-italic font-body text-[15px] font-medium text-[#2d3748] leading-relaxed">
+              <address className="font-body text-[15px] font-medium not-italic leading-relaxed text-foreground/80">
                 {card.addressLines.map((line) => (
                   <span key={line} className="block">
                     {line}

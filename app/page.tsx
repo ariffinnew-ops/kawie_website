@@ -1,20 +1,19 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/main/navbar'
-import HeroSection from '@/components/main/hero-section'
-import AboutSection from '@/components/main/about-section'
-import ServicesSection from '@/components/main/services-section'
-import ProductSection from '@/components/main/product-section'
-import TrainingSection from '@/components/main/training-section'
-import WhyKawieSection from '@/components/main/why-kawie-section'
-import SocialProofSection from '@/components/main/social-proof-section'
-import IndustriesSection from '@/components/main/industries-section'
-import CtaBand from '@/components/main/cta-band'
 import Footer from '@/components/main/footer'
+import HeroSection from '@/components/home/hero-section'
+import UeosBand from '@/components/home/ueos-band'
+import FlagshipsSection from '@/components/home/flagships-section'
+import EcosystemSection from '@/components/home/ecosystem-section'
+import ServicesSection from '@/components/home/services-section'
+import TrainingSection from '@/components/home/training-section'
+import IndustriesSection from '@/components/home/industries-section'
+import CtaSection from '@/components/home/cta-section'
 
 export const metadata: Metadata = {
-  title: 'Kawie Digital Solutions Sdn Bhd — Custom Software, UEOS & Training',
+  title: 'Kawie Digital Solutions Sdn Bhd — UEOS Platform, Custom Software & Training',
   description:
-    'Cyberjaya-based technology partner for custom software, enterprise platforms, UEOS, and hands-on workforce training. SSM-registered. PDPA-aware.',
+    'One operating system for your entire operation — the UEOS ecosystem of 25 integrated apps, custom software development, and hands-on workforce training. Cyberjaya-based, SSM-registered, PDPA-ready.',
   robots: {
     index: true,
     follow: true,
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Kawie Digital Solutions Sdn Bhd',
     description:
-      'Custom software, IT consultancy, UEOS enterprise platform, and professional training — from Cyberjaya, Malaysia.',
+      'The UEOS enterprise platform and app ecosystem, custom software, IT consultancy, and professional training — from Cyberjaya.',
     type: 'website',
     locale: 'en_MY',
     siteName: 'Kawie Digital Solutions',
@@ -39,14 +38,13 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <HeroSection />
-        <AboutSection />
+        <UeosBand />
+        <FlagshipsSection />
+        <EcosystemSection />
         <ServicesSection />
-        <ProductSection />
         <TrainingSection />
-        <WhyKawieSection />
-        <SocialProofSection />
         <IndustriesSection />
-        <CtaBand />
+        <CtaSection />
       </main>
       <Footer />
     </>

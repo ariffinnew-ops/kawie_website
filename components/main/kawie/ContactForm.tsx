@@ -3,10 +3,12 @@
 import { useState, type FormEvent } from "react"
 
 const serviceOptions = [
+  "UEOS Platform Demo",
+  "Construction Project Management (UEOS PM)",
+  "Partner / Reseller Pricing",
   "Custom Software Development",
   "IT Consultancy & Digital Transformation",
   "Training & Skills Development",
-  "UEOS Platform Demo",
   "General Enquiry",
 ]
 
@@ -63,28 +65,26 @@ export function ContactForm({ defaultService }: ContactFormProps) {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-[rgba(15,37,87,0.12)] bg-white px-4 py-3 font-body text-[15px] text-[#2d3748] placeholder:text-[#8892a8] outline-none transition-colors focus:border-[#00c6d7] focus:ring-2 focus:ring-[#00c6d7]/20"
+    "w-full rounded-xl border border-input bg-white px-4 py-3 font-body text-[15px] text-foreground placeholder:text-[var(--muted-2)] outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
 
-  const labelClass = "font-body text-sm font-medium text-[#0f2557] mb-1.5 block"
+  const labelClass = "font-body text-sm font-medium text-foreground mb-1.5 block"
 
   return (
-    <div className="rounded-2xl border border-[rgba(15,37,87,0.08)] bg-white p-8 shadow-sm">
-      <h2 className="font-heading text-2xl font-bold text-[#0f2557] mb-1">
-        Send us a message
-      </h2>
-      <p className="font-body text-[#4a5578] text-base leading-relaxed mb-8">
+    <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+      <h2 className="mb-1 font-heading text-2xl font-bold text-foreground">Send us a message</h2>
+      <p className="mb-8 font-body text-base leading-relaxed text-muted-foreground">
         Tell us about your project or training needs. We&apos;ll respond within 24 hours.
       </p>
 
       {submitted ? (
-        <p className="font-body text-[15px] text-[#0f2557] rounded-xl bg-[#f0f4ff] border border-[rgba(15,37,87,0.08)] px-4 py-3">
+        <p className="rounded-xl border border-border bg-secondary px-4 py-3 font-body text-[15px] text-foreground">
           Thank you — your message has been sent. We&apos;ll get back to you within 24 hours. If
           you need to follow up, email{" "}
-          <a href="mailto:admin@kawie-digital.com" className="text-[#00c6d7] font-medium">
+          <a href="mailto:admin@kawie-digital.com" className="font-medium text-primary-dim">
             admin@kawie-digital.com
           </a>{" "}
           or{" "}
-          <a href="mailto:inquiry@kawie-digital.com" className="text-[#00c6d7] font-medium">
+          <a href="mailto:inquiry@kawie-digital.com" className="font-medium text-primary-dim">
             inquiry@kawie-digital.com
           </a>
           .
@@ -92,12 +92,15 @@ export function ContactForm({ defaultService }: ContactFormProps) {
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           {error && (
-            <p className="font-body text-sm text-red-600 rounded-xl bg-red-50 border border-red-100 px-4 py-3" role="alert">
+            <p
+              className="rounded-xl border border-red-100 bg-red-50 px-4 py-3 font-body text-sm text-red-600"
+              role="alert"
+            >
               {error}
             </p>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className={labelClass}>
                 Full name *
@@ -126,7 +129,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="company" className={labelClass}>
                 Company
@@ -184,7 +187,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
               name="message"
               required
               rows={5}
-              className={`${inputClass} resize-y min-h-[120px]`}
+              className={`${inputClass} min-h-[120px] resize-y`}
               placeholder="Tell us about your project, timeline, or training requirements..."
             />
           </div>
@@ -192,7 +195,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
           <button
             type="submit"
             disabled={submitting}
-            className="btn-hover inline-flex items-center justify-center rounded-xl bg-[#0f2557] px-8 py-3.5 font-body text-[15px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+            className="btn-hover inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 font-body text-[15px] font-semibold text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
           >
             {submitting ? "Sending…" : "Send Message →"}
           </button>
