@@ -478,7 +478,7 @@ export default function EcosystemMap() {
       <div
         ref={viewportRef}
         onMouseDown={onMouseDown}
-        className={`scroll-hidden min-h-0 flex-1 overflow-auto overscroll-contain rounded-xl border border-[var(--c-line)] bg-[var(--c-bg)]/80 ${
+        className={`scroll-hidden min-h-0 flex-1 overflow-auto rounded-xl border border-[var(--c-line)] bg-[var(--c-bg)]/80 ${
           dragging ? "cursor-grabbing" : "cursor-grab"
         }`}
       >

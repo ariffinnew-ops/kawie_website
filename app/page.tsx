@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Navbar from '@/components/main/navbar'
 import Footer from '@/components/main/footer'
+import HashScroll from '@/components/home/hash-scroll'
 import HeroSection from '@/components/home/hero-section'
 import UeosBand from '@/components/home/ueos-band'
 import FlagshipsSection from '@/components/home/flagships-section'
@@ -36,6 +37,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
+      <HashScroll />
       <main id="main-content">
         <HeroSection />
         <UeosBand />

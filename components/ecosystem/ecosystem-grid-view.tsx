@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowLeft, Monitor, X, ZoomIn } from "lucide-react"
 import { APPS, TOTAL_APP_COUNT } from "@/lib/apps-data"
 import { ECOSYSTEM_NODE_BY_CODE, normalizeEcosystemCode } from "@/lib/ecosystem-data"
@@ -115,13 +114,14 @@ export default function EcosystemGridView() {
             {TOTAL_APP_COUNT} apps across 7 domains — here's how they all fit together.
           </p>
         </div>
-        <Link
-          href="/"
+        {/* Native <a>, not next/link — see ecosystem-page-client.tsx for why. */}
+        <a
+          href="/#ecosystem"
           className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-[var(--c-line-strong)] px-3 py-1.5 font-body text-[12.5px] font-semibold text-[var(--c-ink)] transition-colors hover:border-[var(--c-accent)] hover:text-[var(--c-accent)]"
         >
           <ArrowLeft size={14} aria-hidden />
           Back
-        </Link>
+        </a>
       </div>
 
       <div className="mt-4">
