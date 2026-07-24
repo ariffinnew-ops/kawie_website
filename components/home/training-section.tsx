@@ -87,7 +87,7 @@ export default function TrainingSection() {
         <Reveal className="mt-10">
           <div className="console overflow-hidden rounded-[20px] border border-[var(--c-line-strong)] bg-[var(--c-bg2)] text-[var(--c-ink)]">
             <div className="grid lg:grid-cols-[1fr_460px]">
-              <div className="p-8 md:p-10">
+              <div className="p-5 sm:p-8 md:p-10">
                 <div className="flex flex-wrap items-center gap-5">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

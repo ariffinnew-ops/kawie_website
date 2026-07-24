@@ -113,7 +113,7 @@ export default function UeosBand() {
                 <strong className="mt-1 block text-[13.5px] font-semibold text-[var(--c-ink)]">
                   {m.name}
                 </strong>
-                <span className="block max-h-0 overflow-hidden font-body text-[11.5px] leading-snug text-[var(--c-muted)] opacity-0 transition-all duration-200 group-hover:mt-1 group-hover:max-h-10 group-hover:opacity-100">
+                <span className="mt-1 block font-body text-[11.5px] leading-snug text-[var(--c-muted)]">
                   {m.detail}
                 </span>
               </div>

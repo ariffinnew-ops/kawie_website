@@ -52,12 +52,12 @@ export default function Navbar() {
               className="h-9 w-9 shrink-0 rounded-md object-contain"
               priority
             />
-            <span className="hidden font-heading text-[15px] font-bold lowercase leading-tight text-foreground sm:block">
+            <span className="font-heading text-[14px] font-bold lowercase leading-tight text-foreground sm:text-[15px]">
               kawie <span className="text-primary-dim">digital</span>
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -78,7 +78,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
-            className="grid h-9 w-9 place-items-center rounded-lg text-foreground md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg text-foreground lg:hidden"
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
@@ -88,7 +88,7 @@ export default function Navbar() {
 
         {menuOpen && (
           <nav
-            className="border-t border-border bg-background px-6 pb-6 pt-3 md:hidden"
+            className="border-t border-border bg-background px-6 pb-6 pt-3 lg:hidden"
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col gap-1">

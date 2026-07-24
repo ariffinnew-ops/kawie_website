@@ -34,7 +34,7 @@ export default function IndustriesSection() {
               {ind.name}
               <span
                 role="tooltip"
-                className="pointer-events-none absolute bottom-[calc(100%+8px)] left-1/2 z-20 w-max max-w-[260px] -translate-x-1/2 rounded-lg border border-border bg-foreground px-3.5 py-2 text-center font-body text-[12px] leading-snug text-background opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100"
+                className="pointer-events-none absolute bottom-[calc(100%+8px)] left-0 z-20 w-max max-w-[min(240px,calc(100vw-2rem))] rounded-lg border border-border bg-foreground px-3.5 py-2 text-center font-body text-[12px] leading-snug text-background opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 sm:left-1/2 sm:-translate-x-1/2"
               >
                 {ind.apps}
               </span>

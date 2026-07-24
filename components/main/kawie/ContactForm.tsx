@@ -70,7 +70,7 @@ export function ContactForm({ defaultService }: ContactFormProps) {
   const labelClass = "font-body text-sm font-medium text-foreground mb-1.5 block"
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+    <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8">
       <h2 className="mb-1 font-heading text-2xl font-bold text-foreground">Send us a message</h2>
       <p className="mb-8 font-body text-base leading-relaxed text-muted-foreground">
         Tell us about your project or training needs. We&apos;ll respond within 24 hours.

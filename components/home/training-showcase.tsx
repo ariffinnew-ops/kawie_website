@@ -129,7 +129,7 @@ export default function TrainingShowcase({
             <button
               type="button"
               onClick={() => goTo(index - 1)}
-              className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(16,32,43,0.55)] text-white opacity-0 transition-opacity duration-150 hover:bg-[rgba(16,32,43,0.8)] group-hover:opacity-100"
+              className="absolute left-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(16,32,43,0.55)] text-white opacity-100 transition-opacity duration-150 hover:bg-[rgba(16,32,43,0.8)] lg:opacity-0 lg:group-hover:opacity-100"
               aria-label="Previous poster"
             >
               <ChevronLeft size={18} />
@@ -137,13 +137,13 @@ export default function TrainingShowcase({
             <button
               type="button"
               onClick={() => goTo(index + 1)}
-              className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(16,32,43,0.55)] text-white opacity-0 transition-opacity duration-150 hover:bg-[rgba(16,32,43,0.8)] group-hover:opacity-100"
+              className="absolute right-2 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(16,32,43,0.55)] text-white opacity-100 transition-opacity duration-150 hover:bg-[rgba(16,32,43,0.8)] lg:opacity-0 lg:group-hover:opacity-100"
               aria-label="Next poster"
             >
               <ChevronRight size={18} />
             </button>
             <div className="absolute inset-x-0 bottom-3 z-10 flex justify-center">
-              <div className="flex items-center gap-2 rounded-full bg-[rgba(16,32,43,0.55)] px-3 py-2">
+              <div className="flex items-center gap-1 rounded-full bg-[rgba(16,32,43,0.55)] px-2 py-1.5">
                 {items.map((it, i) => (
                   <button
                     key={it.label}
@@ -151,10 +151,14 @@ export default function TrainingShowcase({
                     onClick={() => goTo(i)}
                     aria-label={`Go to ${it.label}`}
                     aria-current={i === index}
-                    className={`h-2 rounded-full transition-all ${
-                      i === index ? "w-6 bg-white" : "w-2 bg-white/40 hover:bg-white/60"
-                    }`}
-                  />
+                    className="flex h-7 w-7 items-center justify-center"
+                  >
+                    <span
+                      className={`block h-2 rounded-full transition-all ${
+                        i === index ? "w-6 bg-white" : "w-2 bg-white/40"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
             </div>
@@ -164,7 +168,7 @@ export default function TrainingShowcase({
 
       {/* Right column: detail card (changes with poster) + static KPI row (fixed) */}
       <div className="flex flex-col gap-5">
-        <div className="overflow-hidden rounded-[14px] border border-[var(--border)] bg-card p-8 shadow-[0_2px_8px_rgba(16,50,70,0.04)]">
+        <div className="overflow-hidden rounded-[14px] border border-[var(--border)] bg-card p-5 shadow-[0_2px_8px_rgba(16,50,70,0.04)] sm:p-8">
           <div key={index} className="fade-in-key">
             <p className="font-body text-[11px] font-semibold uppercase tracking-[0.1em] text-primary-dim">
               {current.program.kicker}
@@ -271,7 +275,7 @@ export default function TrainingShowcase({
             <p className="font-body text-[13px] font-medium text-white/70">{current.label}</p>
 
             {items.length > 1 && (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {items.map((it, i) => (
                   <button
                     key={it.label}
@@ -282,10 +286,14 @@ export default function TrainingShowcase({
                     }}
                     aria-label={`Go to ${it.label}`}
                     aria-current={i === index}
-                    className={`h-2 rounded-full transition-all ${
-                      i === index ? "w-6 bg-white" : "w-2 bg-white/30 hover:bg-white/50"
-                    }`}
-                  />
+                    className="flex h-9 w-9 items-center justify-center"
+                  >
+                    <span
+                      className={`block h-2 rounded-full transition-all ${
+                        i === index ? "w-6 bg-white" : "w-2 bg-white/30"
+                      }`}
+                    />
+                  </button>
                 ))}
               </div>
             )}

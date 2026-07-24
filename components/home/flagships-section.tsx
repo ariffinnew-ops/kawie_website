@@ -30,7 +30,7 @@ export default function FlagshipsSection() {
 
         <div className="mt-11 grid gap-5 md:grid-cols-2">
           <Reveal>
-            <div className="card-hover h-full rounded-2xl border border-border bg-card p-8 shadow-[0_2px_8px_rgba(16,50,70,0.04)] hover:border-[rgba(14,158,134,0.4)] hover:shadow-[0_18px_44px_-18px_rgba(16,50,70,0.18)]">
+            <div className="card-hover h-full rounded-2xl border border-border bg-card p-5 shadow-[0_2px_8px_rgba(16,50,70,0.04)] hover:border-[rgba(14,158,134,0.4)] hover:shadow-[0_18px_44px_-18px_rgba(16,50,70,0.18)] sm:p-8">
               <p className="eyebrow text-[11px]">
                 UEOS Core Platform
                 <LivePill />
@@ -62,7 +62,7 @@ export default function FlagshipsSection() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="card-hover h-full rounded-2xl border border-border bg-card p-8 shadow-[0_2px_8px_rgba(16,50,70,0.04)] hover:border-[rgba(14,158,134,0.4)] hover:shadow-[0_18px_44px_-18px_rgba(16,50,70,0.18)]">
+            <div className="card-hover h-full rounded-2xl border border-border bg-card p-5 shadow-[0_2px_8px_rgba(16,50,70,0.04)] hover:border-[rgba(14,158,134,0.4)] hover:shadow-[0_18px_44px_-18px_rgba(16,50,70,0.18)] sm:p-8">
               <p className="eyebrow text-[11px]">
                 UEOS Project Management
                 <LivePill />
